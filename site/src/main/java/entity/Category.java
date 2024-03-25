@@ -1,17 +1,15 @@
 package entity;
 import jakarta.persistence.*;
-import org.springframework.data.annotation.Id;
-
-import javax.annotation.processing.Generated;
 import java.math.BigDecimal;
 import java.sql.Date;
 import java.util.Set;
+
 @Entity
 @Table(name = "Category")
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int categoryId;
+    private Long categoryId;
 
     @Column(name = "Category_Name")
     private String categoryName;
@@ -25,12 +23,8 @@ public class Category {
     public Category() {
     }
 
-    public int getCategoryId() {
+    public Long getCategoryId() {
         return categoryId;
-    }
-
-    public void setCategoryId(int categoryId) {
-        this.categoryId = categoryId;
     }
 
     public String getCategoryName() {

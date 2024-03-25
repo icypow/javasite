@@ -1,10 +1,9 @@
 package entity;
 import jakarta.persistence.*;
-import org.springframework.data.annotation.Id;
-
 import java.math.BigDecimal;
 import java.sql.Date;
 import java.util.Set;
+
 @Entity
 @Table(name = "Order")
 public class Order {
