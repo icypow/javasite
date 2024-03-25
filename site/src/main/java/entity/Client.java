@@ -30,11 +30,16 @@ public class Client {
     @Column(name = "Password")
     private String password;
 
-    @OneToMany(mappedBy = "client")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "client")
     private Set<Order> orders;
 
-    @OneToMany(mappedBy = "client")
-    private Set<Review> reviews;
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinTable(
+            name = "Review",
+            joinColumns = @JoinColumn(name = "Client_ID"),
+            inverseJoinColumns = @JoinColumn(name =  "Product_ID")
+    )
+    private Set<Product> products;
 
     public Client() {
     }

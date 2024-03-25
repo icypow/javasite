@@ -24,14 +24,18 @@ public class Product {
     @Column(name = "Relevance")
     private int relevance;
 
-    @OneToMany(mappedBy = "product")
-    private Set<ProductCategory> productCategories;
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinTable(
+            name = "ProductCategories",
+            joinColumns = @JoinColumn(name = "Product_ID"),
+            inverseJoinColumns = @JoinColumn(name =  "Category_ID")
+    )
+    private Set<Category> categories;
+    @ManyToMany(mappedBy = "products")
+    private Set<Client> clients;
 
-    @OneToMany(mappedBy = "product")
-    private Set<Review> reviews;
-
-    @OneToMany(mappedBy = "product")
-    private Set<OrderProduct> orderProducts;
+    @ManyToMany(mappedBy = "products")
+    private Set<Order> orders;
 
     public Product() {
     }
@@ -76,27 +80,10 @@ public class Product {
         this.relevance = relevance;
     }
 
-    public Set<ProductCategory> getProductCategories() {
-        return productCategories;
+    public Set<Categories> getProductCategories() {
+        return Categories;
     }
 
-    public void setProductCategories(Set<ProductCategory> productCategories) {
-        this.productCategories = productCategories;
+    public void setProductCategories(Set<Categories> productCategories) {
+        this.Categories = productCategories;
     }
-
-    public Set<Review> getReviews() {
-        return reviews;
-    }
-
-    public void setReviews(Set<Review> reviews) {
-        this.reviews = reviews;
-    }
-
-    public Set<OrderProduct> getOrderProducts() {
-        return orderProducts;
-    }
-
-    public void setOrderProducts(Set<OrderProduct> orderProducts) {
-        this.orderProducts = orderProducts;
-    }
-}
