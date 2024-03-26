@@ -24,18 +24,13 @@ public class Product {
     @Column(name = "Relevance")
     private int relevance;
 
-    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinTable(
-            name = "ProductCategories",
-            joinColumns = @JoinColumn(name = "Product_ID"),
-            inverseJoinColumns = @JoinColumn(name =  "Category_ID")
-    )
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "product")
     private Set<Category> categories;
-    @ManyToMany(mappedBy = "products")
-    private Set<Client> clients;
+    @OneToMany(mappedBy = "product")
+    private Set<Review> reviews;
 
-    @ManyToMany(mappedBy = "products")
-    private Set<Order> orders;
+    @OneToMany(mappedBy = "product")
+    private Set<OrderProduct> orders;
 
     public Product() {
     }
@@ -80,10 +75,27 @@ public class Product {
         this.relevance = relevance;
     }
 
-    public Set<Categories> getProductCategories() {
-        return Categories;
+    public Set<Category> getCategories() {
+        return categories;
     }
 
-    public void setProductCategories(Set<Categories> productCategories) {
-        this.Categories = productCategories;
+    public void setCategories(Set<Category> categories) {
+        this.categories = categories;
     }
+
+    public Set<Review> getReviews() {
+        return reviews;
+    }
+
+    public void setReviews(Set<Review> reviews) {
+        this.reviews = reviews;
+    }
+
+    public Set<OrderProduct> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(Set<OrderProduct> orders) {
+        this.orders = orders;
+    }
+}

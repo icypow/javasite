@@ -33,13 +33,8 @@ public class Client {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "client")
     private Set<Order> orders;
 
-    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinTable(
-            name = "Review",
-            joinColumns = @JoinColumn(name = "Client_ID"),
-            inverseJoinColumns = @JoinColumn(name =  "Product_ID")
-    )
-    private Set<Product> products;
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "client")
+    private Set<Review> reviews;
 
     public Client() {
     }

@@ -18,13 +18,17 @@ public class Category {
     private String parametres; // JSON тип данных в Java обычно представлен как String
 
     @OneToMany(mappedBy = "category")
-    private Set<ProductCategory> productCategories;
+    private Set<Product> products;
 
     public Category() {
     }
 
     public Long getCategoryId() {
         return categoryId;
+    }
+
+    public void setCategoryId(Long categoryId) {
+        this.categoryId = categoryId;
     }
 
     public String getCategoryName() {
@@ -43,11 +47,11 @@ public class Category {
         this.parametres = parametres;
     }
 
-    public Set<ProductCategory> getProductCategories() {
-        return productCategories;
+    public Set<Product> getProducts() {
+        return products;
     }
 
-    public void setProductCategories(Set<ProductCategory> productCategories) {
-        this.productCategories = productCategories;
+    public void setProducts(Set<Product> products) {
+        this.products = products;
     }
 }

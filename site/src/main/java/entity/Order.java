@@ -27,13 +27,8 @@ public class Order {
     @Column(name = "Delivery_date")
     private Date deliveryDate;
 
-    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinTable(
-            name = "OrderedProducts",
-            joinColumns = @JoinColumn(name = "Order_ID"),
-            inverseJoinColumns = @JoinColumn(name =  "Product_ID")
-    )
-    private Set<Product> products;
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "order")
+    private Set<OrderProduct> products;
 
     public Order() {
     }
@@ -86,11 +81,19 @@ public class Order {
         this.deliveryDate = deliveryDate;
     }
 
-    public Set<OrderedProducts> getOrderProducts() {
-        return OrderedProducts;
+    public Set<OrderProduct> getOrderProducts() {
+        return products;
     }
 
-    public void setOrderProducts(Set<OrderedProducts> orderProducts) {
-        this.OrderedProducts = orderProducts;
+    public void setOrderProducts(Set<OrderProduct> orderProducts) {
+        this.products = orderProducts;
+    }
+
+    public Set<OrderProduct> getProducts() {
+        return products;
+    }
+
+    public void setProducts(Set<OrderProduct> products) {
+        this.products = products;
     }
 }
