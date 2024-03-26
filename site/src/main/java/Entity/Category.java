@@ -1,7 +1,6 @@
-package entity;
+package Entity;
 import jakarta.persistence.*;
-import java.math.BigDecimal;
-import java.sql.Date;
+
 import java.util.Set;
 
 @Entity

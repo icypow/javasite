@@ -1,7 +1,6 @@
-package entity;
+package Entity;
 import jakarta.persistence.*;
 import java.math.BigDecimal;
-import java.sql.Date;
 import java.util.Set;
 
 
@@ -11,6 +10,8 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int productId;
+    @Column(name = "Product_Name")
+    private String productName;
 
     @Column(name = "Product_Price")
     private BigDecimal productPrice;
@@ -81,6 +82,14 @@ public class Product {
 
     public void setCategories(Set<Category> categories) {
         this.categories = categories;
+    }
+
+    public String getProductName() {
+        return productName;
+    }
+
+    public void setProductName(String productName) {
+        this.productName = productName;
     }
 
     public Set<Review> getReviews() {
