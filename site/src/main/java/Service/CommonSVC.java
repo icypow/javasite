@@ -23,10 +23,6 @@ public abstract class CommonSVC<T, DAO extends CommonDAO<T>> {
         dao.save(obj);
     }
 
-    // public void saveCollection(List<Brand> brands){
-    //     brandDao.saveCollection(brands);
-    // }
-
     public void update(T obj){
         dao.update(obj);
     }
