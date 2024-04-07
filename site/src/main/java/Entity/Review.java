@@ -20,4 +20,15 @@ public class Review {
 
     @Column(name = "Review_Text")
     private String reviewText;
+
+    public Review(){
+    }
+
+    public Review(Client clientObj, Product productObj, String text, int rate){
+        this.client = clientObj;
+        this.product = productObj;
+        this.reviewText = text;
+        this.rate = rate;
+    }
+
 }

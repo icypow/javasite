@@ -38,6 +38,11 @@ public class Client {
     public Client() {
     }
 
+    public Client(String login, String password) {
+        this.setLogin(login);
+        this.setPassword(password);
+    }
+
     public int getClientId() {
         return clientId;
     }
