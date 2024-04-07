@@ -7,12 +7,12 @@ import jakarta.persistence.*;
 public class Review {
     @Id
     @ManyToOne
-    @JoinColumn(name = "Product_ID")
+    @JoinColumn(name = "Product_ID", referencedColumnName = "Product_ID")
     private Product product;
 
     @Id
     @ManyToOne
-    @JoinColumn(name = "Client_ID")
+    @JoinColumn(name = "Client_ID", referencedColumnName = "Client_ID")
     private Client client;
 
     @Column(name = "Rate")
@@ -23,6 +23,7 @@ public class Review {
 
     public Review(){
     }
+
 
     public Review(Client clientObj, Product productObj, String text, int rate){
         this.client = clientObj;

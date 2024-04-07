@@ -8,6 +8,7 @@ import java.util.Set;
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "Category_ID")
     private Long categoryId;
 
     @Column(name = "Category_Name")
@@ -16,11 +17,13 @@ public class Category {
     @Column(name = "Parametres")
     private String parametres; // JSON тип данных в Java обычно представлен как String
 
-    @OneToMany(mappedBy = "category")
+    @OneToMany(mappedBy = "categories")
     private Set<Product> products;
 
     public Category() {
     }
+
+
 
     public Long getCategoryId() {
         return categoryId;

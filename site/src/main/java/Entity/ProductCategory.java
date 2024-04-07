@@ -7,12 +7,12 @@ import jakarta.persistence.*;
 public class ProductCategory {
     @Id
     @ManyToOne
-    @JoinColumn(name = "Product_ID")
+    @JoinColumn(name = "Product_ID",referencedColumnName = "Product_ID")
     private Product product;
 
     @Id
     @ManyToOne
-    @JoinColumn(name = "Category_ID")
+    @JoinColumn(name = "Category_ID", referencedColumnName = "Category_ID")
     private Category category;
 
     @Column(name = "Category_Priority")

@@ -1,6 +1,7 @@
 package Entity;
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.Set;
 
 
@@ -9,6 +10,7 @@ import java.util.Set;
 public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "Client_ID")
     private int clientId;
 
     @Column(name = "Name")
@@ -39,8 +41,16 @@ public class Client {
     }
 
     public Client(String login, String password) {
-        this.setLogin(login);
-        this.setPassword(password);
+        this.login = login;
+        this.password = password;
+        this.name = null;
+        this.address = null;
+        this.email = null;
+        this.phone = null;
+    }
+
+    public String toString(){
+        return "Client [name =" + name + "]";
     }
 
     public int getClientId() {

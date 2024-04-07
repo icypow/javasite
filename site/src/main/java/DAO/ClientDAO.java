@@ -17,6 +17,5 @@ public class ClientDAO extends CommonDAO<Client> {
             obj.setPassword(newPassword);
         }
     }
-
 }
 

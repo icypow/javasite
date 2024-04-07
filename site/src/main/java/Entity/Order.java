@@ -9,6 +9,7 @@ import java.util.Set;
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "Order_ID")
     private int orderId;
 
     @ManyToOne
@@ -31,6 +32,15 @@ public class Order {
     private Set<OrderProduct> products;
 
     public Order() {
+    }
+
+
+    public Order(Client client, int status, int deliveryType, BigDecimal deliveryPrice, java.sql.Date deliveryDate){
+        this.client = client;
+        this.status = status;
+        this.deliveryType = deliveryType;
+        this.deliveryPrice = deliveryPrice;
+        this.deliveryDate = deliveryDate;
     }
 
     public int getOrderId() {

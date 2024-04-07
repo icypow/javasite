@@ -21,16 +21,16 @@ public class ReviewDAO extends CommonDAO<Review>{
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         Transaction t = session.beginTransaction();
         try {
-            StringBuilder queryString = new StringBuilder("SELECT p FROM Product p ");
-            TypedQuery<Product> query = session.createQuery(queryString.toString(), Product.class);
-            query.setParameter("OrderID", obj.getOrderId());
-            List<Product> res = query.getResultList();
+            StringBuilder queryString = new StringBuilder("SELECT r FROM Review r ");
+            queryString.append("WHERE r.product = :product");
+            TypedQuery<Review> query = session.createQuery(queryString.toString(), Review.class);
+            query.setParameter("product", obj);
+            List<Review> res = query.getResultList();
             t.commit();
             return res;
         }
-
         catch (jakarta.persistence.NoResultException e) {
-            System.out.println("No products in order " + obj.getOrderId());
+            System.out.println("No reviews allocated to " + obj.getProductName());
             t.rollback();
             return null;
         }

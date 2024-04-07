@@ -9,6 +9,7 @@ import java.util.Set;
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "Product_ID")
     private int productId;
     @Column(name = "Product_Name")
     private String productName;
@@ -27,6 +28,7 @@ public class Product {
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "product")
     private Set<Category> categories;
+
     @OneToMany(mappedBy = "product")
     private Set<Review> reviews;
 
