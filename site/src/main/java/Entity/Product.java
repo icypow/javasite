@@ -26,14 +26,14 @@ public class Product {
     @Column(name = "Relevance")
     private int relevance;
 
-//    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "product")
-//    private Set<Category> categories;
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "product")
+    private Set<ProductCategory> categories;
 
-//    @OneToMany(mappedBy = "product")
-//    private Set<Review> reviews;
+    @OneToMany(mappedBy = "product")
+    private Set<Review> reviews;
 
-//    @OneToMany(mappedBy = "product")
-//    private Set<OrderProduct> orders;
+    @OneToMany(mappedBy = "product")
+    private Set<OrderProduct> orders;
 
     public Product() {
     }
@@ -78,13 +78,6 @@ public class Product {
         this.relevance = relevance;
     }
 
-//    public Set<Category> getCategories() {
-//        return categories;
-//    }
-//
-//    public void setCategories(Set<Category> categories) {
-//        this.categories = categories;
-//    }
 
     public String getProductName() {
         return productName;
@@ -94,19 +87,19 @@ public class Product {
         this.productName = productName;
     }
 
-//    public Set<Review> getReviews() {
-//        return reviews;
-//    }
-//
-//    public void setReviews(Set<Review> reviews) {
-//        this.reviews = reviews;
-//    }
+    public Set<Review> getReviews() {
+        return reviews;
+    }
 
-//    public Set<OrderProduct> getOrders() {
-//        return orders;
-//    }
-//
-//    public void setOrders(Set<OrderProduct> orders) {
-//        this.orders = orders;
-//    }
+    public void setReviews(Set<Review> reviews) {
+        this.reviews = reviews;
+    }
+
+    public Set<OrderProduct> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(Set<OrderProduct> orders) {
+        this.orders = orders;
+    }
 }

@@ -22,7 +22,7 @@ public class ProductCategory {
 
 //    public ProductCategory(Product product, Client client, int rate, String reviewText) {
 //        this.rate = rate;
-//        this.id = new ReviewID(client.getClientId(), product.getProductId());
+//        this.id = new ProductCategoryID(client.getClientId(), product.getProductId());
 //        this.client = client;
 //        this.reviewText = reviewText;
 //    }
