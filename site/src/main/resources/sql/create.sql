@@ -10,7 +10,7 @@ CREATE TABLE "Client" (
   PRIMARY KEY ("Client_ID")
 );
 
-CREATE TABLE "Order" (
+CREATE TABLE "OrderTable" (
   "Order_ID" int,
   "Client_ID" int,
   "Status" int,
@@ -18,7 +18,7 @@ CREATE TABLE "Order" (
   "Delivery_Price" money,
   "Delivery_date" date,
   PRIMARY KEY ("Order_ID"),
-  CONSTRAINT "FK_Order.Client_ID"
+  CONSTRAINT "FK_OrderTable.Client_ID"
     FOREIGN KEY ("Client_ID")
       REFERENCES "Client"("Client_ID")
 );
@@ -58,7 +58,10 @@ CREATE TABLE "Review" (
   "Review_Text" text,
   CONSTRAINT "FK_Review.Client_ID"
     FOREIGN KEY ("Client_ID")
-      REFERENCES "Client"("Client_ID")
+      REFERENCES "Client"("Client_ID"),
+  CONSTRAINT "FK_Review.Product_ID"
+    FOREIGN KEY ("Product_ID")
+      REFERENCES "Product"("Product_ID")
 );
 
 CREATE TABLE "Order&Product" (
@@ -70,6 +73,6 @@ CREATE TABLE "Order&Product" (
       REFERENCES "Product"("Product_ID"),
   CONSTRAINT "FK_Order&Product.Order_ID"
     FOREIGN KEY ("Order_ID")
-      REFERENCES "Order"("Order_ID")
+      REFERENCES "OrderTable"("Order_ID")
 );
 
