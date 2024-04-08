@@ -17,8 +17,8 @@ public class Category {
     @Column(name = "Parametres")
     private String parametres; // JSON тип данных в Java обычно представлен как String
 
-    @OneToMany(mappedBy = "categories")
-    private Set<Product> products;
+//    @OneToMany(mappedBy = "categories")
+//    private Set<Product> products;
 
     public Category() {
     }
@@ -49,11 +49,11 @@ public class Category {
         this.parametres = parametres;
     }
 
-    public Set<Product> getProducts() {
-        return products;
-    }
-
-    public void setProducts(Set<Product> products) {
-        this.products = products;
-    }
+//    public Set<Product> getProducts() {
+//        return products;
+//    }
+//
+//    public void setProducts(Set<Product> products) {
+//        this.products = products;
+//    }
 }

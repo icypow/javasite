@@ -14,7 +14,7 @@ public class ReviewDAO extends CommonDAO<Review>{
         super(Review.class);
     }
     public void leaveReview(Client clientObj, Product productObj, String text, int rate){
-        this.save(new Review(clientObj, productObj, text, rate));
+        this.save(new Review(productObj, clientObj, rate, text));
     }
 
     public List<Review> getProductReviews(Product obj){

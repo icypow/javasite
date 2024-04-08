@@ -5,12 +5,10 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "Review")
 public class Review {
-    @Id
     @ManyToOne
     @JoinColumn(name = "Product_ID", referencedColumnName = "Product_ID")
     private Product product;
 
-    @Id
     @ManyToOne
     @JoinColumn(name = "Client_ID", referencedColumnName = "Client_ID")
     private Client client;
@@ -21,15 +19,18 @@ public class Review {
     @Column(name = "Review_Text")
     private String reviewText;
 
+    @EmbeddedId
+    private ReviewID id;
+
+    public Review(Product product, Client client, int rate, String reviewText) {
+        this.rate = rate;
+        this.id = new ReviewID(client.getClientId(), product.getProductId());
+        this.client = client;
+        this.reviewText = reviewText;
+    }
+
     public Review(){
     }
 
-
-    public Review(Client clientObj, Product productObj, String text, int rate){
-        this.client = clientObj;
-        this.product = productObj;
-        this.reviewText = text;
-        this.rate = rate;
-    }
 
 }

@@ -5,7 +5,7 @@ import java.sql.Date;
 import java.util.Set;
 
 @Entity
-@Table(name = "Order")
+@Table(name = "OrderTable")
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,7 +13,7 @@ public class Order {
     private int orderId;
 
     @ManyToOne
-    @JoinColumn(name = "Client_ID", referencedColumnName = "Client_ID")
+    @JoinColumn(name = "Client_ID")
     private Client client;
 
     @Column(name = "Status")

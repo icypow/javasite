@@ -49,10 +49,6 @@ public class Client {
         this.phone = null;
     }
 
-    public String toString(){
-        return "Client [name =" + name + "]";
-    }
-
     public int getClientId() {
         return clientId;
     }
