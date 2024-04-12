@@ -38,6 +38,13 @@ public class Product {
     public Product() {
     }
 
+    public Product(String name, BigDecimal productPrice, int productAmount, String productDescription, int relevance){
+        this.productName = name;
+        this.productPrice = productPrice;
+        this.productAmount = productAmount;
+        this.productDescription = productDescription;
+        this.relevance = relevance;
+    }
     public int getProductId() {
         return productId;
     }

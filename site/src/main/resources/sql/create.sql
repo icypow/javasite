@@ -26,7 +26,7 @@ CREATE TABLE "OrderTable" (
 CREATE TABLE "Category" (
   "Category_ID" int,
   "Category_Name" text,
-  "Parametres" json,
+  "Parameters" json,
   PRIMARY KEY ("Category_ID")
 );
 

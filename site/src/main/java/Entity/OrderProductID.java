@@ -19,5 +19,4 @@ public class OrderProductID implements Serializable{
         this.product_id = product;
         this.order_id = order;
     }
-
 }

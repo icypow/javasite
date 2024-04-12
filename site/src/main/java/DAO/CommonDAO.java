@@ -22,6 +22,7 @@ public abstract class CommonDAO<T> {
         return b;
     }
 
+
     public List<T> findAll(){
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         Transaction t = session.beginTransaction();

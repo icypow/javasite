@@ -9,13 +9,13 @@ public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "Category_ID")
-    private Long categoryId;
+    private int categoryId;
 
     @Column(name = "Category_Name")
     private String categoryName;
 
-    @Column(name = "Parametres")
-    private String parametres; // JSON тип данных в Java обычно представлен как String
+    @Column(name = "Parameters")
+    private String parameters; // JSON тип данных в Java обычно представлен как String
 
     @OneToMany(mappedBy = "category")
     private Set<ProductCategory> products;
@@ -23,13 +23,22 @@ public class Category {
     public Category() {
     }
 
+    public Category(String name){
+        this.categoryName = name;
+        this.parameters = null;
+    }
+    public Category(String name, String parameters){
+        this.categoryName = name;
+        this.parameters = parameters;
+    }
 
 
-    public Long getCategoryId() {
+
+    public int getCategoryId() {
         return categoryId;
     }
 
-    public void setCategoryId(Long categoryId) {
+    public void setCategoryId(int categoryId) {
         this.categoryId = categoryId;
     }
 
@@ -41,12 +50,12 @@ public class Category {
         this.categoryName = categoryName;
     }
 
-    public String getParametres() {
-        return parametres;
+    public String getParameters() {
+        return parameters;
     }
 
-    public void setParametres(String parametres) {
-        this.parametres = parametres;
+    public void setParameters(String parameters) {
+        this.parameters = parameters;
     }
 
 //    public Set<Product> getProducts() {
