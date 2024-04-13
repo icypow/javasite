@@ -1,11 +1,17 @@
 package Entity;
 import jakarta.persistence.*;
+import lombok.*;
 
 import java.util.ArrayList;
 import java.util.Set;
 
 
 @Entity
+@Getter
+@Setter
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "Client")
 public class Client {
     @Id
@@ -19,7 +25,7 @@ public class Client {
     @Column(name = "Phone")
     private String phone;
 
-    @Column(name = "E-mail")
+    @Column(name = "Email")
     private String email;
 
     @Column(name = "Address")
@@ -37,8 +43,6 @@ public class Client {
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "client")
     private Set<Review> reviews;
 
-    public Client() {
-    }
 
     public Client(String login, String password) {
         this.login = login;

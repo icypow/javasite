@@ -6,14 +6,14 @@ import java.util.List;
 
 import BuisnesLogic.HibernateUtil;
 
-public abstract class CommonDAO<T> {
+public abstract class CommonDAO<T, PrimaryKey> {
     private final Class<T> entityClass;
 
     public CommonDAO(Class<T> entityClass){
         this.entityClass = entityClass;
     }
 
-    public T findById(int id){
+    public T findById(PrimaryKey id){
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         Transaction t = session.beginTransaction();
         // session.flush();
@@ -67,7 +67,7 @@ public abstract class CommonDAO<T> {
                 });
     }
 
-    public void deleteById(int id){
+    public void deleteById(PrimaryKey id){
         HibernateUtil.getSessionFactory()
                 .inTransaction(session -> {
                     session.remove(findById(id));

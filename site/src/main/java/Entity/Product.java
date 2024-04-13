@@ -35,8 +35,7 @@ public class Product {
     @OneToMany(mappedBy = "product")
     private Set<OrderProduct> orders;
 
-    public Product() {
-    }
+
 
     public Product(String name, BigDecimal productPrice, int productAmount, String productDescription, int relevance){
         this.productName = name;

@@ -10,13 +10,14 @@ import jakarta.persistence.Embeddable;
 import java.io.Serializable;
 @Embeddable
 public class OrderProductID implements Serializable{
-    private int order_id;
-    private int product_id;
+
+    private int Order_ID;
+    private int Product_ID;
 
 
     public OrderProductID(){};
     public OrderProductID(int order, int product){
-        this.product_id = product;
-        this.order_id = order;
+        this.Product_ID = product;
+        this.Order_ID = order;
     }
 }

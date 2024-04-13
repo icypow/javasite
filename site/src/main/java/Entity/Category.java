@@ -2,8 +2,14 @@ package Entity;
 import jakarta.persistence.*;
 
 import java.util.Set;
+import lombok.*;
 
 @Entity
+@Getter
+@Setter
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "Category")
 public class Category {
     @Id
@@ -20,8 +26,6 @@ public class Category {
     @OneToMany(mappedBy = "category")
     private Set<ProductCategory> products;
 
-    public Category() {
-    }
 
     public Category(String name){
         this.categoryName = name;

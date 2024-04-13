@@ -5,7 +5,7 @@ import java.util.Set;
 import Entity.*;
 
 @Entity
-@Table(name = "Product&Category")
+@Table(name = "ProductCategory")
 public class ProductCategory {
     @ManyToOne
     @JoinColumn(name = "Product_ID", referencedColumnName = "Product_ID")

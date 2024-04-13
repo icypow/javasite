@@ -1,11 +1,18 @@
 package Entity;
 import jakarta.persistence.*;
+import lombok.*;
+
 import java.math.BigDecimal;
 import java.sql.Date;
 import java.util.Set;
 
 @Entity
 @Table(name = "OrderTable")
+@Getter
+@Setter
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,9 +37,6 @@ public class Order {
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "order")
     private Set<OrderProduct> products;
-
-    public Order() {
-    }
 
 
     public Order(Client client, int status, int deliveryType, BigDecimal deliveryPrice, java.sql.Date deliveryDate){

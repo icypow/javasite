@@ -2,7 +2,7 @@ package Service;
 import java.util.List;
 import DAO.*;
 import Entity.*;
-public class ProductSVC extends CommonSVC<Product, ProductDAO> {
+public class ProductSVC extends CommonSVC<Product, Integer, ProductDAO> {
     public ProductSVC(){
         super(new ProductDAO());
     }

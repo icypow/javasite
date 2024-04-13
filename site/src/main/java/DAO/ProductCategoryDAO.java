@@ -4,13 +4,14 @@ import BuisnesLogic.HibernateUtil;
 import Entity.Category;
 import Entity.Product;
 import Entity.ProductCategory;
+import Entity.ProductCategoryID;
 import jakarta.persistence.TypedQuery;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import java.util.List;
 
-public class ProductCategoryDAO extends CommonDAO<ProductCategory> {
+public class ProductCategoryDAO extends CommonDAO<ProductCategory, ProductCategoryID> {
     public ProductCategoryDAO(){
         super(ProductCategory.class);
     }

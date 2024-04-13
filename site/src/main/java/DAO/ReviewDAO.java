@@ -9,7 +9,7 @@ import org.hibernate.Transaction;
 
 import java.util.List;
 
-public class ReviewDAO extends CommonDAO<Review>{
+public class ReviewDAO extends CommonDAO<Review, ReviewID>{
     public ReviewDAO(){
         super(Review.class);
     }

@@ -3,7 +3,7 @@ import java.util.List;
 import DAO.*;
 import Entity.*;
 
-public class ClientSVC extends CommonSVC<Client, ClientDAO> {
+public class ClientSVC extends CommonSVC<Client, Integer, ClientDAO> {
     public ClientSVC(){
         super(new ClientDAO());
     }

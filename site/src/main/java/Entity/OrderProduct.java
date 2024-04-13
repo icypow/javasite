@@ -4,20 +4,20 @@ import Entity.*;
 import Entity.Order;
 
 @Entity
-@Table(name = "Order&Product")
+@Table(name = "OrderProduct")
 public class OrderProduct {
-    @ManyToOne
-    @JoinColumn(name = "Order_ID")
-    private Order order;
-
-    @ManyToOne
-    @JoinColumn(name = "Product_ID")
-    private Product product;
 
     @EmbeddedId
     private OrderProductID id;
+    @ManyToOne
+    @JoinColumn(name = "Order_ID", insertable = false, updatable = false)
+    private Order order;
 
-    @Column(name = "P&O_Amount")
+    @ManyToOne
+    @JoinColumn(name = "Product_ID", insertable = false, updatable = false)
+    private Product product;
+
+    @Column(name = "Amount")
     private int poAmount;
 
     public OrderProduct(Order order, Product product, int poAmount){

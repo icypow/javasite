@@ -8,7 +8,7 @@ import jakarta.persistence.TypedQuery;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-public class OrderProductDAO extends CommonDAO<OrderProduct> {
+public class OrderProductDAO extends CommonDAO<OrderProduct, OrderProductID> {
     public OrderProductDAO(){
         super(OrderProduct.class);
     }

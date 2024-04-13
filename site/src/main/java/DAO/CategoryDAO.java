@@ -9,7 +9,7 @@ import org.hibernate.Transaction;
 
 import java.util.List;
 
-public class CategoryDAO extends CommonDAO<Category> {
+public class CategoryDAO extends CommonDAO<Category, Integer> {
     public CategoryDAO(){
         super(Category.class);
     }

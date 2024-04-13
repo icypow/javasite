@@ -4,14 +4,14 @@ import java.util.List;
 
 import DAO.CommonDAO;
 
-public abstract class CommonSVC<T, DAO extends CommonDAO<T>> {
+public abstract class CommonSVC<T, PrimaryKey, DAO extends CommonDAO<T, PrimaryKey>> {
     protected DAO dao;
 
     public CommonSVC(DAO dao){
         this.dao = dao;
     }
 
-    public T findById(int id){
+    public T findById(PrimaryKey id){
         return dao.findById(id);
     }
 
@@ -31,7 +31,7 @@ public abstract class CommonSVC<T, DAO extends CommonDAO<T>> {
         dao.delete(obj);
     }
 
-    public void deleteById(int id){
+    public void deleteById(PrimaryKey id){
         dao.deleteById(id);
     }
 }

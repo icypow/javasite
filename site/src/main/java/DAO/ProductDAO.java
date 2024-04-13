@@ -5,7 +5,7 @@ import BuisnesLogic.*;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-public class ProductDAO extends CommonDAO<Product> {
+public class ProductDAO extends CommonDAO<Product, Integer> {
     public ProductDAO(){
         super(Product.class);
     }

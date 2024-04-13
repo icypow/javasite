@@ -37,7 +37,7 @@ public class OrderTest {
     @AfterAll
     static public void testOrderAfter(){
         osvc.deleteById(1);
-        opsvc.deleteById(1);
+        opsvc.deleteById(new OrderProductID(1,1));
         psvc.deleteById(1);
     }
 }

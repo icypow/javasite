@@ -8,7 +8,7 @@ import org.hibernate.Transaction;
 
 import java.util.Objects;
 
-public class ClientDAO extends CommonDAO<Client> {
+public class ClientDAO extends CommonDAO<Client, Integer> {
     public ClientDAO(){
         super(Client.class);
     }
