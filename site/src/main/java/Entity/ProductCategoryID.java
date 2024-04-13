@@ -8,14 +8,14 @@ import jakarta.persistence.Embeddable;
 import java.io.Serializable;
 @Embeddable
 public class ProductCategoryID implements Serializable{
-    private int product_id;
-    private int category_id;
+    private int Product_ID;
+    private int Category_ID;
 
     public ProductCategoryID(){};
 
     public ProductCategoryID(int product, int category){
-        this.category_id = category;
-        this.product_id = product;
+        this.Category_ID = category;
+        this.Product_ID = product;
     }
 
 

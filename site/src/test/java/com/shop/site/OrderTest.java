@@ -14,8 +14,8 @@ public class OrderTest {
     static private OrderSVC osvc = new OrderSVC();
     static private ClientSVC csvc = new ClientSVC();
 
-    @BeforeAll
-    static public void testOrder(){
+    @Test
+    public void testAllProducts(){
         Client c = new Client();
         Date date = new Date(2010, 1, 1);
         BigDecimal p = new BigDecimal("250.0");
@@ -26,18 +26,13 @@ public class OrderTest {
         psvc.save(product);
         Order order2 = osvc.findAll().get(0);
         Product product2 = psvc.findAll().get(0);
+        Client client2 = csvc.findAll().get(0);
         OrderProduct op = new OrderProduct(order2, product2, 5);
         opsvc.save(op);
-    }
-
-    @Test
-    public void testAllProducts(){
-        Assertions.assertEquals(osvc.getProducts(osvc.findById(1)).size(), 1);
-    }
-    @AfterAll
-    static public void testOrderAfter(){
-        osvc.deleteById(1);
-        opsvc.deleteById(new OrderProductID(1,1));
-        psvc.deleteById(1);
+        Assertions.assertEquals(osvc.getProducts(order2).size(), 1);
+        osvc.deleteById(order2.getOrderId());
+        //opsvc.deleteById(new OrderProductID(1,1));
+        psvc.deleteById(product2.getProductId());
+        csvc.deleteById(client2.getClientId());
     }
 }

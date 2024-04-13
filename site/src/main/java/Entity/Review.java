@@ -1,16 +1,21 @@
 package Entity;
 import jakarta.persistence.*;
+import lombok.*;
 
 
 @Entity
 @Table(name = "Review")
 public class Review {
+
+    @EmbeddedId
+    private ReviewID id;
+
     @ManyToOne
-    @JoinColumn(name = "Product_ID", referencedColumnName = "Product_ID")
+    @JoinColumn(name = "Product_ID", insertable = false, updatable = false)
     private Product product;
 
     @ManyToOne
-    @JoinColumn(name = "Client_ID", referencedColumnName = "Client_ID")
+    @JoinColumn(name = "Client_ID", insertable = false, updatable = false)
     private Client client;
 
     @Column(name = "Rate")
@@ -18,9 +23,6 @@ public class Review {
 
     @Column(name = "Review_Text")
     private String reviewText;
-
-    @EmbeddedId
-    private ReviewID id;
 
     public Review(Product product, Client client, int rate, String reviewText) {
         this.rate = rate;
@@ -30,7 +32,7 @@ public class Review {
         this.reviewText = reviewText;
     }
 
-    public Review(){
+    public Review() {
     }
 
     public Product getProduct() {

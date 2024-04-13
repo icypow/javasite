@@ -1,5 +1,8 @@
 package Entity;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
 import java.math.BigDecimal;
 import java.util.Set;
 
@@ -26,16 +29,14 @@ public class Product {
     @Column(name = "Relevance")
     private int relevance;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "product")
+    @OneToMany(cascade = {CascadeType.REMOVE}, fetch = FetchType.LAZY, mappedBy = "product")
     private Set<ProductCategory> categories;
 
-    @OneToMany(mappedBy = "product")
+    @OneToMany(cascade = {CascadeType.REMOVE}, mappedBy = "product")
     private Set<Review> reviews;
 
-    @OneToMany(mappedBy = "product")
+    @OneToMany(cascade = {CascadeType.REMOVE}, mappedBy = "product")
     private Set<OrderProduct> orders;
-
-
 
     public Product(String name, BigDecimal productPrice, int productAmount, String productDescription, int relevance){
         this.productName = name;
@@ -44,6 +45,10 @@ public class Product {
         this.productDescription = productDescription;
         this.relevance = relevance;
     }
+
+    public Product() {
+    }
+
     public int getProductId() {
         return productId;
     }

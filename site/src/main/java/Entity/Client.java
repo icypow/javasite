@@ -7,11 +7,6 @@ import java.util.Set;
 
 
 @Entity
-@Getter
-@Setter
-@ToString
-@NoArgsConstructor
-@AllArgsConstructor
 @Table(name = "Client")
 public class Client {
     @Id
@@ -37,10 +32,10 @@ public class Client {
     @Column(name = "Password")
     private String password;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "client")
+    @OneToMany(cascade = {CascadeType.ALL}, mappedBy = "client")
     private Set<Order> orders;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "client")
+    @OneToMany(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY, mappedBy = "client")
     private Set<Review> reviews;
 
 
@@ -51,6 +46,9 @@ public class Client {
         this.address = null;
         this.email = null;
         this.phone = null;
+    }
+
+    public Client() {
     }
 
     public int getClientId() {

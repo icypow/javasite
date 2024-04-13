@@ -14,7 +14,7 @@ public class ClientTest {
         ClientSVC cs;
         Client c;
         cs = new ClientSVC();
-        c =  new Client("aboba",  "12345");
+        c =  new Client("aboba", "12345");
         cs.save(c);
         Assertions.assertEquals(cs.findById(c.getClientId()).getPassword(), "12345");
         cs.changePassword(c, "12345", "54321");

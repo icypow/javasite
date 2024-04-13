@@ -3,20 +3,21 @@ import jakarta.persistence.*;
 import java.math.BigDecimal;
 import java.util.Set;
 import Entity.*;
+import lombok.*;
 
 @Entity
 @Table(name = "ProductCategory")
 public class ProductCategory {
-    @ManyToOne
-    @JoinColumn(name = "Product_ID", referencedColumnName = "Product_ID")
-    private Product product;
-
-    @ManyToOne
-    @JoinColumn(name = "Category_ID", referencedColumnName = "Category_ID")
-    private Category category;
 
     @EmbeddedId
     private ProductCategoryID id;
+    @ManyToOne
+    @JoinColumn(name = "Product_ID", insertable = false, updatable = false)
+    private Product product;
+
+    @ManyToOne
+    @JoinColumn(name = "Category_ID", insertable = false, updatable = false)
+    private Category category;
 
 
     @Column(name = "Category_Priority")
@@ -27,6 +28,9 @@ public class ProductCategory {
         this.category = category;
         this.id = new ProductCategoryID(product.getProductId(), category.getCategoryId());
         this.categoryPriority = categoryPriority;
+    }
+
+    public ProductCategory() {
     }
 
     public Product getProduct() {

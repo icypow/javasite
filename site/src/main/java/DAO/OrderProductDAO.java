@@ -19,7 +19,7 @@ public class OrderProductDAO extends CommonDAO<OrderProduct, OrderProductID> {
             StringBuilder queryString = new StringBuilder("SELECT op.product FROM OrderProduct op ");
             queryString.append("WHERE op.order = :order");
             TypedQuery<Product> query = session.createQuery(queryString.toString(), Product.class);
-            query.setParameter("category", obj);
+            query.setParameter("order", obj);
             List<Product> res = query.getResultList();
             t.commit();
             return res;
@@ -35,7 +35,7 @@ public class OrderProductDAO extends CommonDAO<OrderProduct, OrderProductID> {
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         Transaction t = session.beginTransaction();
         try {
-            StringBuilder queryString = new StringBuilder("SELECT op.category FROM OrderProduct op ");
+            StringBuilder queryString = new StringBuilder("SELECT op.order FROM OrderProduct op ");
             queryString.append("WHERE op.product = :product");
             TypedQuery<Order> query = session.createQuery(queryString.toString(), Order.class);
             query.setParameter("product", obj);

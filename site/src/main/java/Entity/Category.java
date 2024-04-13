@@ -2,14 +2,10 @@ package Entity;
 import jakarta.persistence.*;
 
 import java.util.Set;
-import lombok.*;
+
 
 @Entity
-@Getter
-@Setter
-@ToString
-@NoArgsConstructor
-@AllArgsConstructor
+
 @Table(name = "Category")
 public class Category {
     @Id
@@ -36,7 +32,8 @@ public class Category {
         this.parameters = parameters;
     }
 
-
+    public Category() {
+    }
 
     public int getCategoryId() {
         return categoryId;

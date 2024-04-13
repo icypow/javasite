@@ -2,9 +2,10 @@ package Entity;
 import jakarta.persistence.*;
 import Entity.*;
 import Entity.Order;
-
+import lombok.*;
 @Entity
 @Table(name = "OrderProduct")
+@NoArgsConstructor
 public class OrderProduct {
 
     @EmbeddedId
@@ -25,6 +26,9 @@ public class OrderProduct {
         this.product = product;
         this.poAmount = poAmount;
         this.id = new OrderProductID(order.getOrderId(), product.getProductId());
+    }
+
+    public OrderProduct() {
 
     }
 

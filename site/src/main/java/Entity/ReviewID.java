@@ -10,12 +10,12 @@ import java.io.Serializable;
 @Embeddable
 public class ReviewID implements Serializable{
 
-        private int client_id;
-        private int service_id;
+        private int Client_ID;
+        private int Product_ID;
 
-        public ReviewID(int client, int service){
-            this.client_id = client;
-            this.service_id = service;
+        public ReviewID(int client, int product){
+            this.Client_ID = client;
+            this.Product_ID = product;
         }
         public ReviewID(){
         }

@@ -8,11 +8,6 @@ import java.util.Set;
 
 @Entity
 @Table(name = "OrderTable")
-@Getter
-@Setter
-@ToString
-@NoArgsConstructor
-@AllArgsConstructor
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -35,9 +30,11 @@ public class Order {
     @Column(name = "Delivery_date")
     private Date deliveryDate;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "order")
+    @OneToMany(cascade = {CascadeType.REMOVE}, fetch = FetchType.LAZY, mappedBy = "order")
     private Set<OrderProduct> products;
 
+    public Order() {
+    }
 
     public Order(Client client, int status, int deliveryType, BigDecimal deliveryPrice, java.sql.Date deliveryDate){
         this.client = client;
@@ -47,6 +44,9 @@ public class Order {
         this.deliveryDate = deliveryDate;
     }
 
+    public String toString(){
+        return "Client "+client+" ID"+orderId;
+    }
     public int getOrderId() {
         return orderId;
     }

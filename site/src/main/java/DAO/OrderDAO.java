@@ -19,12 +19,11 @@ public class OrderDAO extends CommonDAO<Order, Integer> {
         Transaction t = session.beginTransaction();
         try {
             StringBuilder queryString = new StringBuilder("SELECT p FROM Product p ");
-            queryString.append("WHERE FROM Order");
-            queryString.append("JOIN OrderProduct ON Order = OrderProduct.order");
-            queryString.append("JOIN Product ON OrderProduct = Product.product");
-            queryString.append("WHERE Order = :Order;");
+            queryString.append("JOIN OrderProduct op ON p = op.product ");
+            queryString.append("JOIN Order o ON o = op.order ");
+            queryString.append("WHERE o = :Order");
             TypedQuery<Product> query = session.createQuery(queryString.toString(), Product.class);
-            query.setParameter("OrderID", obj);
+            query.setParameter("Order", obj);
             List<Product> res = query.getResultList();
             t.commit();
             return res;
