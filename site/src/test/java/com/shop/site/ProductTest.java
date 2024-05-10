@@ -1,7 +1,9 @@
 package com.shop.site;
+import com.shop.site.Entity.Product;
+import com.shop.site.Service.ProductSVC;
 import org.junit.jupiter.api.*;
-import Entity.*;
-import Service.*;
+import com.shop.site.Entity.*;
+import com.shop.site.Service.*;
 
 import org.junit.jupiter.api.Test;
 

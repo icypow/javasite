@@ -1,8 +1,11 @@
 package com.shop.site;
-import Entity.Order;
+import com.shop.site.Entity.*;
+import com.shop.site.Service.CategorySVC;
+import com.shop.site.Service.ProductCategorySVC;
+import com.shop.site.Service.ProductSVC;
 import org.junit.jupiter.api.*;
-import Entity.*;
-import Service.*;
+import com.shop.site.Entity.*;
+import com.shop.site.Service.*;
 
 public class ProductCategoryTest {
     static ProductSVC psvc = new ProductSVC();

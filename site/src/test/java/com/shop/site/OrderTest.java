@@ -1,8 +1,15 @@
 package com.shop.site;
-import Entity.Order;
+import com.shop.site.Entity.Client;
+import com.shop.site.Entity.Order;
+import com.shop.site.Entity.OrderProduct;
+import com.shop.site.Entity.Product;
+import com.shop.site.Service.ClientSVC;
+import com.shop.site.Service.OrderProductSVC;
+import com.shop.site.Service.OrderSVC;
+import com.shop.site.Service.ProductSVC;
 import org.junit.jupiter.api.*;
-import Entity.*;
-import Service.*;
+import com.shop.site.Entity.*;
+import com.shop.site.Service.*;
 
 import java.math.BigDecimal;
 import java.sql.Date;

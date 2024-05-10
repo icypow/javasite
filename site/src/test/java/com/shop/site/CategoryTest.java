@@ -1,7 +1,9 @@
 package com.shop.site;
+import com.shop.site.Entity.Category;
+import com.shop.site.Service.CategorySVC;
 import org.junit.jupiter.api.*;
-import Entity.*;
-import Service.*;
+import com.shop.site.Entity.*;
+import com.shop.site.Service.*;
 
 
 public class CategoryTest {

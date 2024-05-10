@@ -1,8 +1,9 @@
 package com.shop.site;
-import org.checkerframework.checker.units.qual.C;
+import com.shop.site.Entity.Client;
+import com.shop.site.Service.ClientSVC;
 import org.junit.jupiter.api.*;
-import Entity.*;
-import Service.*;
+import com.shop.site.Entity.*;
+import com.shop.site.Service.*;
 
 
 public class ClientTest {
