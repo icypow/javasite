@@ -29,8 +29,12 @@ public class OrderTest {
         Client client2 = csvc.findAll().get(0);
         OrderProduct op = new OrderProduct(order2, product2, 5);
         opsvc.save(op);
+        //Order o = new Order();
+        //osvc.save(o);
         Assertions.assertEquals(osvc.getProducts(order2).size(), 1);
+        //Assertions.assertNull(osvc.getProducts(o));
         osvc.deleteById(order2.getOrderId());
+        //osvc.deleteById(o.getOrderId());
         //opsvc.deleteById(new OrderProductID(1,1));
         psvc.deleteById(product2.getProductId());
         csvc.deleteById(client2.getClientId());

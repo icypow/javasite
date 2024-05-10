@@ -15,7 +15,7 @@ public class OrderProductDAO extends CommonDAO<OrderProduct, OrderProductID> {
     public List<Product> GetProducts(Order obj){
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         Transaction t = session.beginTransaction();
-        try {
+//        try {
             StringBuilder queryString = new StringBuilder("SELECT op.product FROM OrderProduct op ");
             queryString.append("WHERE op.order = :order");
             TypedQuery<Product> query = session.createQuery(queryString.toString(), Product.class);
@@ -23,18 +23,18 @@ public class OrderProductDAO extends CommonDAO<OrderProduct, OrderProductID> {
             List<Product> res = query.getResultList();
             t.commit();
             return res;
-        }
-        catch (jakarta.persistence.NoResultException e) {
-            System.out.println("No product allocated to " + obj.getOrderId());
-            t.rollback();
-            return null;
-        }
+//        }
+//        catch (Exception e) {
+//            System.out.println("No product allocated to " + obj.getOrderId());
+//            t.rollback();
+//            return null;
+//        }
     }
 
     public List<Order> GetOrders(Product obj){
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         Transaction t = session.beginTransaction();
-        try {
+//        try {
             StringBuilder queryString = new StringBuilder("SELECT op.order FROM OrderProduct op ");
             queryString.append("WHERE op.product = :product");
             TypedQuery<Order> query = session.createQuery(queryString.toString(), Order.class);
@@ -42,11 +42,11 @@ public class OrderProductDAO extends CommonDAO<OrderProduct, OrderProductID> {
             List<Order> res = query.getResultList();
             t.commit();
             return res;
-        }
-        catch (jakarta.persistence.NoResultException e) {
-            System.out.println("No order allocated to " + obj.getProductName());
-            t.rollback();
-            return null;
-        }
+//        }
+//        catch (Exception e) {
+//            System.out.println("No order allocated to " + obj.getProductName());
+//            t.rollback();
+//            return null;
+//        }
     }
 }
