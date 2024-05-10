@@ -13,10 +13,16 @@ public class ProductDAO extends CommonDAO<Product, Integer> {
     }
 
     public Product findByName(String name) {
-        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
-        Transaction transaction = session.beginTransaction();
+
+        try {
+            Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+            Transaction transaction = session.beginTransaction();
             Product p = session.createQuery("FROM Product WHERE productName = :name", Product.class).setParameter("name", name).getSingleResult();
             transaction.commit();
             return p;
+        }
+        catch (jakarta.persistence.NoResultException e) {
+            return null;
+        }
     }
 }

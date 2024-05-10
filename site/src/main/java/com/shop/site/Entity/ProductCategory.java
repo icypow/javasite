@@ -20,11 +20,15 @@ public class ProductCategory {
     @Column(name = "Category_Priority")
     private int categoryPriority;
 
-    public ProductCategory(Product product, Category category, int categoryPriority) {
+    @Column(name = "Category_Values")
+    private String category_values;
+
+    public ProductCategory(Product product, Category category, int categoryPriority, String category_values) {
         this.product = product;
         this.category = category;
         this.id = new ProductCategoryID(product.getProductId(), category.getCategoryId());
         this.categoryPriority = categoryPriority;
+        this.category_values = category_values;
     }
 
     public ProductCategory() {

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Товар</title>
+</head>
+<body>
+<h2>Product Details</h2>
+<div>
+    <h3 th:text="${product.productName}"></h3>
+    <p th:text="'Price: $' + ${product.productPrice}"></p>
+    <p th:text="'Available Amount: ' + ${product.productAmount}"></p>
+    <p th:text="${product.productDescription}"></p>
+</div>
+</body>
+</html>

@@ -29,8 +29,8 @@ public class SecurityConfig {
         http
                 .csrf((csrf) -> csrf.disable())
                 .authorizeHttpRequests((authorize) -> authorize
-                        .requestMatchers("/test").authenticated()
-                        .requestMatchers("/**").permitAll()
+                        .requestMatchers("/login", "/register").permitAll()
+                        .anyRequest().authenticated()
                 )
 
                 .httpBasic(Customizer.withDefaults())
@@ -39,7 +39,7 @@ public class SecurityConfig {
 //                                .usernameParameter("username")
 //                                .passwordParameter("password")
                                 .loginPage("/login").permitAll()
-                                .defaultSuccessUrl("/register?succ")
+                                .defaultSuccessUrl("/search")
                                 //.failureUrl("/register?failure")
                                 //.loginProcessingUrl("/ authentication/ login/ process")
 

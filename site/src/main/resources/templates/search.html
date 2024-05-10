@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поиск</title>
+</head>
+<body>
+<h2>Search</h2>
+<form action="#" method="get">
+    <label for="productName">Поиск по продукту:</label>
+    <input type="text" id="productName" name="productName">
+    <button type="submit">Search</button>
+</form>
+<form action="#" method="get">
+    <label for="category">Поиск по категории:</label>
+    <input type="text" id="category" name="category">
+    <button type="submit">Search</button>
+</form>
+
+<!-- Если есть сообщение об отсутствии товара, отображаем его -->
+<div th:if="${message}" style="color: red;">
+    <p th:text="${message}"></p>
+</div>
+
+<!-- Результаты поиска будут отображаться здесь -->
+<div id="searchResults">
+    <ul>
+        <!-- Пройти по всем товарам и вывести их названия -->
+        <li th:each="product : ${searchResults}">
+            <!-- Создать ссылку для перехода на страницу товара -->
+            <a th:href="@{'/product?id=' + ${product.productId}}" th:text="${product.productName}"></a>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

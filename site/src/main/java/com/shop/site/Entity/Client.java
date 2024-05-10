@@ -8,7 +8,7 @@ import java.util.Set;
 @Table(name = "Client")
 public class Client {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "Client_ID")
     private int clientId;
 
@@ -45,7 +45,6 @@ public class Client {
         this.email = null;
         this.phone = null;
     }
-
 
     public Client() {
     }

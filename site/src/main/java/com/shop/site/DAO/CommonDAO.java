@@ -18,6 +18,8 @@ public abstract class CommonDAO<T, PrimaryKey> {
             T res = session.get(entity, id);
             t.commit();
             return res;
+        } catch (jakarta.persistence.NoResultException e) {
+            return null;
         }
     }
 
@@ -27,6 +29,8 @@ public abstract class CommonDAO<T, PrimaryKey> {
             List<T> res = session.createQuery("from " + entity.getSimpleName(), entity).getResultList();
             t.commit();
             return res;
+        } catch (jakarta.persistence.NoResultException e) {
+            return null;
         }
     }
 

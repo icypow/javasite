@@ -9,15 +9,15 @@ import java.util.Set;
 @Table(name = "Category")
 public class Category {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "Category_ID")
     private int categoryId;
 
     @Column(name = "Category_Name")
     private String categoryName;
 
-    @Column(name = "Parameters")
-    private String parameters; // JSON тип данных в Java обычно представлен как String
+    @Column(name = "Parametrs")
+    private String parametrs; // JSON тип данных в Java обычно представлен как String
 
     @OneToMany(mappedBy = "category")
     private Set<ProductCategory> products;
@@ -25,11 +25,11 @@ public class Category {
 
     public Category(String name){
         this.categoryName = name;
-        this.parameters = null;
+        this.parametrs = null;
     }
-    public Category(String name, String parameters){
+    public Category(String name, String parametrs){
         this.categoryName = name;
-        this.parameters = parameters;
+        this.parametrs = parametrs;
     }
 
     public Category() {
@@ -51,12 +51,12 @@ public class Category {
         this.categoryName = categoryName;
     }
 
-    public String getParameters() {
-        return parameters;
+    public String getparametrs() {
+        return parametrs;
     }
 
-    public void setParameters(String parameters) {
-        this.parameters = parameters;
+    public void setparametrs(String parametrs) {
+        this.parametrs = parametrs;
     }
 
 //    public Set<Product> getProducts() {

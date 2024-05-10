@@ -8,4 +8,8 @@ public class CategorySVC extends CommonSVC<Category, Integer, CategoryDAO>{
     public CategorySVC(){
         super(new CategoryDAO());
     }
+    public Category findByName(String name){
+        return dao.findByName(name);
+    }
+
 }

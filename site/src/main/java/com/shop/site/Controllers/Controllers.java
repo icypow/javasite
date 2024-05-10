@@ -9,6 +9,14 @@ import com.shop.site.Entity.*;
 import com.shop.site.Service.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.Collections;
+import java.util.List;
 
 
 @Controller
@@ -67,11 +75,57 @@ public class Controllers {
         return "redirect:/login";
     }
 
-
-
     @GetMapping("/hello")
     public String helloForm(Model model) {
         return "hello";
     }
 
+
+    @GetMapping("/search")
+    public String search(@RequestParam(name = "productName", required = false) String productName,
+                         @RequestParam(name = "category", required = false) String category,
+                         Model model) {
+        List<Product> searchResults = Collections.emptyList();
+        if (productName != null && !productName.isEmpty()) {
+            // Поиск по названию товара
+            Product product = productsvc.findByName(productName);
+            if (product == null) {
+                // Если товар не найден, передаем сообщение об отсутствии товара
+
+                model.addAttribute("message", "Товар не найден: " + productName);
+            } else {
+                // Если товар найден, перенаправляем на страницу товара
+                // Вам нужно будет реализовать эту логику позже
+                return "redirect:/product?id=" + product.getProductId();
+            }
+        } else if (category != null && !category.isEmpty()) {
+            Category categoryObj = categorysvc.findByName(category);
+            if (categoryObj == null){
+                model.addAttribute("message", "Такой категории не существует: " + category);
+                return "search";
+            }
+            searchResults = productcategorysvc.GetProducts(categoryObj);
+            if (searchResults == null){
+                model.addAttribute("message", "В данной категории нет товаров: " + category);
+                return "search";
+            }
+        }
+
+        model.addAttribute("searchResults", searchResults);
+        return "search";
+    }
+
+
+    @GetMapping("/product")
+    public String getProductDetails(@RequestParam(name = "id") int productId, Model model) {
+        // Получаем информацию о товаре по его ID
+        Product product = productsvc.findById(productId);
+        if (product == null) {
+            // Если товар с указанным ID не найден, перенаправляем на страницу поиска
+            return "redirect:/search";
+        }
+        // Если товар найден, передаем его информацию на страницу
+        model.addAttribute("product", product);
+        return "product";
+    }
 }

@@ -25,7 +25,7 @@ public class ReviewDAO extends CommonDAO<Review, ReviewID>{
     public List<Review> getProductReviews(Product obj){
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         Transaction t = session.beginTransaction();
-//        try {
+        try {
             StringBuilder queryString = new StringBuilder("SELECT r FROM Review r ");
             queryString.append("WHERE r.product = :product");
             TypedQuery<Review> query = session.createQuery(queryString.toString(), Review.class);
@@ -33,12 +33,12 @@ public class ReviewDAO extends CommonDAO<Review, ReviewID>{
             List<Review> res = query.getResultList();
             t.commit();
             return res;
-//        }
-//        catch (Exception e) {
-//            System.out.println("No reviews allocated to " + obj.getProductName());
-//            t.rollback();
-//            return null;
-//        }
+        }
+        catch (Exception e) {
+            System.out.println("No reviews allocated to " + obj.getProductName());
+            t.rollback();
+            return null;
+        }
     }
 
 }

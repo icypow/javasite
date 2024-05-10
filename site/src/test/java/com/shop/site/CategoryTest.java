@@ -13,6 +13,6 @@ public class CategoryTest {
     public void testCategory(){
         Category c1 = new Category("Чайник", "Длина, ширина, мощность");
         Assertions.assertEquals(c1.getCategoryName(), "Чайник");
-        Assertions.assertEquals(c1.getParameters(), "Длина, ширина, мощность");
+        Assertions.assertEquals(c1.getparametrs(), "Длина, ширина, мощность");
     }
 }

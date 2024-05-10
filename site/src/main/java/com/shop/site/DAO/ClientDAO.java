@@ -22,14 +22,18 @@ public class ClientDAO extends CommonDAO<Client, Integer> {
     }
 
     public Client findClientByLogin(String login){
-        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
-        Transaction t = session.beginTransaction();
-        StringBuilder queryString = new StringBuilder("SELECT c FROM Client c WHERE c.login = :login");
-        TypedQuery<Client> query = session.createQuery(queryString.toString(), Client.class);
-        query.setParameter("login", login);
-        Client res = query.getSingleResult();
-        t.commit();
-        return res;
+        try {
+            Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+            Transaction t = session.beginTransaction();
+            StringBuilder queryString = new StringBuilder("SELECT c FROM Client c WHERE c.login = :login");
+            TypedQuery<Client> query = session.createQuery(queryString.toString(), Client.class);
+            query.setParameter("login", login);
+            Client res = query.getSingleResult();
+            t.commit();
+            return res;
+        } catch (jakarta.persistence.NoResultException e) {
+            return null;
+        }
     }
 
 //    public Boolean isValidLogin(String username, String password){

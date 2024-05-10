@@ -1,4 +1,4 @@
---DROP TABLE Client, OrderTable, Category, Product, "Product&Category", Review, "Order&Product"
+DROP TABLE Client, OrderTable, Category, Product, ProductCategory, Review, OrderProduct;
 CREATE TABLE Client (
   Client_ID int,
   Name text,
@@ -26,12 +26,13 @@ CREATE TABLE OrderTable (
 CREATE TABLE Category (
   Category_ID int,
   Category_Name text,
-  Parameters json,
+  Parametrs text[],
   PRIMARY KEY (Category_ID)
 );
 
 CREATE TABLE Product (
   Product_ID int,
+  Product_Name text,
   Product_Price money,
   Product_Amount int,
   Product_Description text,
@@ -43,6 +44,7 @@ CREATE TABLE ProductCategory (
   Product_ID int,
   Category_ID int,
   Category_Priority int,
+  Category_Values text[], 
   CONSTRAINT "FK_Product&Category.Category_ID"
     FOREIGN KEY (Category_ID)
       REFERENCES Category(Category_ID),

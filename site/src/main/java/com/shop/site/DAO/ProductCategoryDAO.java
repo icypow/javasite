@@ -19,7 +19,7 @@ public class ProductCategoryDAO extends CommonDAO<ProductCategory, ProductCatego
     public List<Product> GetProducts(Category obj){
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         Transaction t = session.beginTransaction();
-//        try {
+        try {
             StringBuilder queryString = new StringBuilder("SELECT op.product FROM ProductCategory op ");
             queryString.append("WHERE op.category = :category");
             TypedQuery<Product> query = session.createQuery(queryString.toString(), Product.class);
@@ -27,18 +27,18 @@ public class ProductCategoryDAO extends CommonDAO<ProductCategory, ProductCatego
             List<Product> res = query.getResultList();
             t.commit();
             return res;
-//        }
-//        catch (Exception e) {
-//            System.out.println("No products allocated to " + obj.getCategoryName());
-//            t.rollback();
-//            return null;
-//        }
+        }
+        catch (Exception e) {
+            System.out.println("No products allocated to " + obj.getCategoryName());
+            t.rollback();
+            return null;
+        }
     }
 
     public List<Category> GetCategories(Product obj){
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         Transaction t = session.beginTransaction();
-//        try {
+        try {
             StringBuilder queryString = new StringBuilder("SELECT op.category FROM ProductCategory op ");
             queryString.append("WHERE op.product = :product");
             TypedQuery<Category> query = session.createQuery(queryString.toString(), Category.class);
@@ -46,12 +46,12 @@ public class ProductCategoryDAO extends CommonDAO<ProductCategory, ProductCatego
             List<Category> res = query.getResultList();
             t.commit();
             return res;
-//}
-//        catch (Exception e) {
-//            System.out.println("No category allocated to " + obj.getProductName());
-//            t.rollback();
-//            return null;
-//        }
+}
+        catch (Exception e) {
+            System.out.println("No category allocated to " + obj.getProductName());
+            t.rollback();
+            return null;
+        }
     }
 
 
