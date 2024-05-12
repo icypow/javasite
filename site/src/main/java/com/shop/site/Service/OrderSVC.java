@@ -12,4 +12,5 @@ public class OrderSVC extends CommonSVC<Order, Integer, OrderDAO>{
     }
     public List<Product> getProducts(Order obj) { return dao.getProducts(obj); }
 
+    public List<OrderProduct> getOrderProducts(Order obj) {return dao.getOrderProducts(obj); }
 }

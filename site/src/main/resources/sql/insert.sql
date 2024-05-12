@@ -39,3 +39,6 @@ INSERT INTO ProductCategory VALUES
 -- SELECT * FROM Client
 -- SELECT * FROM Category
 -- SELECT * FROM ProductCategory
+-- SELECT * FROM Product
+-- SELECT * FROM OrderTable
+-- SELECT * FROM OrderProduct

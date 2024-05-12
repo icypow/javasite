@@ -18,9 +18,9 @@ public class OrderDAO extends CommonDAO<Order, Integer> {
 
 
     public List<Product> getProducts(Order obj) {
+        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+        Transaction t = session.beginTransaction();
         try {
-            Session session = HibernateUtil.getSessionFactory().getCurrentSession();
-            Transaction t = session.beginTransaction();
             StringBuilder queryString = new StringBuilder("SELECT p FROM Product p ");
             queryString.append("JOIN OrderProduct op ON p = op.product ");
             queryString.append("JOIN Order o ON o = op.order ");
@@ -31,13 +31,25 @@ public class OrderDAO extends CommonDAO<Order, Integer> {
             t.commit();
             return res;
         } catch (jakarta.persistence.NoResultException e) {
+            t.rollback();
             return null;
         }
-//        catch (Exception e) {
-//            System.out.println("No products in order " + obj.getOrderId());
-//            t.rollback();
-//            return null;
-//        }
+    }
+
+    public List<OrderProduct> getOrderProducts(Order obj) {
+        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+        Transaction t = session.beginTransaction();
+        try {
+            StringBuilder queryString = new StringBuilder("SELECT op FROM OrderProduct op WHERE op.order = :order");
+            TypedQuery<OrderProduct> query = session.createQuery(queryString.toString(), OrderProduct.class);
+            query.setParameter("order", obj);
+            List<OrderProduct> res = query.getResultList();
+            t.commit();
+            return res;
+        } catch (jakarta.persistence.NoResultException e) {
+            t.rollback();
+            return null;
+        }
     }
 
 

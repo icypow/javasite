@@ -43,6 +43,10 @@ public class Order {
         this.deliveryDate = deliveryDate;
     }
 
+    public Order(Client client, int i) {
+
+    }
+
     public String toString(){
         return "Client "+client+" ID"+orderId;
     }
@@ -94,9 +98,6 @@ public class Order {
         this.deliveryDate = deliveryDate;
     }
 
-    public Set<OrderProduct> getOrderProducts() {
-        return products;
-    }
 
     public void setOrderProducts(Set<OrderProduct> orderProducts) {
         this.products = orderProducts;
@@ -108,5 +109,13 @@ public class Order {
 
     public void setProducts(Set<OrderProduct> products) {
         this.products = products;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Order that = (Order) o;
+        return orderId == that.getOrderId();
     }
 }

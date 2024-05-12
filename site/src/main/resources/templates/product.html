@@ -12,6 +12,14 @@
     <p th:text="'Price: $' + ${product.productPrice}"></p>
     <p th:text="'Available Amount: ' + ${product.productAmount}"></p>
     <p th:text="${product.productDescription}"></p>
+
+    <!-- Форма для добавления товара в корзину -->
+    <form action="/cart/add" method="post">
+        <input type="hidden" name="productId" th:value="${product.productId}" />
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" name="amount" min="1" value="1" />
+        <button type="submit">Добавить в корзину</button>
+    </form>
 </div>
 </body>
 </html>

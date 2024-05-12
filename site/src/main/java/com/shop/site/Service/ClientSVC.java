@@ -18,6 +18,9 @@ public class ClientSVC extends CommonSVC<Client, Integer, ClientDAO> {
         return dao.findClientByLogin(login);
     }
 
+    public Order getCart(Client obj){
+        return dao.getCart(obj);
+    }
 
 
 

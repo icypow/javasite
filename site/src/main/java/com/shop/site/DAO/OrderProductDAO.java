@@ -9,6 +9,8 @@ import com.shop.site.Entity.Order;
 import com.shop.site.Entity.OrderProduct;
 import com.shop.site.Entity.OrderProductID;
 import com.shop.site.Entity.Product;
+import com.shop.site.Service.OrderProductSVC;
+import com.shop.site.Service.OrderSVC;
 import jakarta.persistence.TypedQuery;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -54,4 +56,45 @@ public class OrderProductDAO extends CommonDAO<OrderProduct, OrderProductID> {
             return null;
         }
     }
+
+    public void AddToCart(Client client, Product product, int amount){
+        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+        Transaction t = session.beginTransaction();
+        try {
+            StringBuilder queryString = new StringBuilder("SELECT Order FROM Order o ");
+            queryString.append("WHERE o.client = :client AND o.status = 0");
+            TypedQuery<Order> query = session.createQuery(queryString.toString(), Order.class);
+            query.setParameter("client", client);
+            Order res = query.getSingleResult();
+            OrderProduct op = new OrderProduct(res, product, amount);
+            this.save(op);
+            t.commit();
+        }
+        catch (Exception e) {
+            t.rollback();
+        }
+
+    }
+
+    public OrderProduct getExactOP(Order order, Product product){
+        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+        Transaction t = session.beginTransaction();
+        try {
+            StringBuilder queryString = new StringBuilder("SELECT OrderProduct FROM OrderProduct op ");
+            queryString.append("WHERE op.product = :product AND op.order = :order");
+            TypedQuery<OrderProduct> query = session.createQuery(queryString.toString(), OrderProduct.class);
+            query.setParameter("product", product);
+            query.setParameter("order", order);
+            OrderProduct res = query.getSingleResult();
+            t.commit();
+            return res;
+        }
+        catch (Exception e) {
+            t.rollback();
+            return null;
+        }
+    }
+
+
+
 }

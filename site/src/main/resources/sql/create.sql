@@ -1,4 +1,4 @@
-DROP TABLE Client, OrderTable, Category, Product, ProductCategory, Review, OrderProduct;
+--DROP TABLE Client, OrderTable, Category, Product, ProductCategory, Review, OrderProduct;
 CREATE TABLE Client (
   Client_ID int,
   Name text,

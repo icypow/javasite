@@ -111,4 +111,12 @@ public class Product {
     public void setOrders(Set<OrderProduct> orders) {
         this.orders = orders;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Product that = (Product) o;
+        return productId == that.getProductId();
+    }
 }
