@@ -100,6 +100,14 @@ public class Controllers {
     }
 
 
+    @PostMapping("/searchByCategory")
+    public String searchByCategory(@RequestParam(name = "category") String category, Model model){
+        return "redirect:/search?id="+category;
+    }
+
+
+
+
     @GetMapping("/product")
     public String getProductDetails(@RequestParam(name = "id") int productId, Model model) {
         // Получаем информацию о товаре по его ID
@@ -132,6 +140,7 @@ public class Controllers {
             CartItemDTO cartItemDTO = new CartItemDTO(orderProduct, product);
             cartItems.add(cartItemDTO);
         }
+        cartItems.sort((x,y)->x.getProduct().getProductName().compareTo(y.getProduct().getProductName()));
         model.addAttribute("cartItems", cartItems);
         return "cart";
     }
@@ -154,12 +163,6 @@ public class Controllers {
     @PostMapping("/cart/updateQuantity")
     public String updateCartItemQuantity(@AuthenticationPrincipal UserDetails user, @RequestParam("productId") int productId, @RequestParam("amount") int amount) {
         Product product = productsvc.findById(productId);
-//        List<Product> lp = productsvc.findAll();
-//        List<Order> lo = ordersvc.findAll();
-//        List<OrderProduct> orpd = orderproductsvc.findAll();
-//        System.out.println(lp);
-//        System.out.println(lo);
-//        System.out.println(orpd);
         Client client = clientsvc.findClientByLogin(user.getUsername());
         Order cart = clientsvc.getCart(client);
         // Обновление количества товара в заказе
@@ -169,20 +172,50 @@ public class Controllers {
         orderproductsvc.save(op);
         return "redirect:/cart";
     }
-//
-//    @PostMapping("/cart/removeItem")
-//    public String removeItemFromCart(@RequestParam("productId") int productId) {
-//        // Удаление позиции из заказа
-//        orderproductsvc.removeItem(productId);
-//        return "redirect:/cart";
-//    }
-//
-//    @PostMapping("/cart/confirmOrder")
-//    public String confirmOrder(@AuthenticationPrincipal UserDetails user) {
-//        // Подтверждение заказа
-//        Client client = clientsvc.findClientByLogin(user.getUsername());
-//        Order cart = clientsvc.getCart(client);
-//        ordersvc.confirmOrder(cart);
-//        return "redirect:/search";
-//    }
+
+    @PostMapping("/cart/removeFromCart")
+    public String removeItemFromCart(@AuthenticationPrincipal UserDetails user, @RequestParam("productId") int productId) {
+        Product product = productsvc.findById(productId);
+        Client client = clientsvc.findClientByLogin(user.getUsername());
+        Order cart = clientsvc.getCart(client);
+        OrderProduct op = orderproductsvc.getExactOP(cart, product);
+        orderproductsvc.delete(op);
+        return "redirect:/cart";
+    }
+
+    @PostMapping("/cart/confirmOrder")
+    public String confirmOrder(@AuthenticationPrincipal UserDetails user) {
+        // Подтверждение заказа
+        Client client = clientsvc.findClientByLogin(user.getUsername());
+        Order cart = clientsvc.getCart(client);
+        cart.setStatus(1);
+        ordersvc.update(cart);
+        cart = new Order(client, 0, 0, null, null);
+        ordersvc.save(cart);
+        return "redirect:/profile";
+    }
+
+
+    @GetMapping("/profile")
+    public String viewProfile(@AuthenticationPrincipal UserDetails user, Model model) {
+        Client client = clientsvc.findClientByLogin(user.getUsername());
+        List<Order> orders = clientsvc.getOrders(client);
+        List<List<CartItemDTO>> listOfOrders = new ArrayList<>();
+        for (Order order : orders) {
+            List<OrderProduct> cartProducts = ordersvc.getOrderProducts(order);
+            List<CartItemDTO> cartItems = new ArrayList<>();
+            for (OrderProduct orderProduct : cartProducts) {
+                Product product = productsvc.findById(orderProduct.getProduct().getProductId());
+                CartItemDTO cartItemDTO = new CartItemDTO(orderProduct, product);
+                cartItems.add(cartItemDTO);
+            }
+            cartItems.sort((x,y)->x.getProduct().getProductName().compareTo(y.getProduct().getProductName()));
+            listOfOrders.add(cartItems);
+        }
+
+        model.addAttribute("orders", listOfOrders);
+        return "profile";
+    }
+
+
 }

@@ -3,23 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Товар</title>
+    <title>Cart</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            margin-top: 50px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border-bottom: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        input[type="number"] {
+            width: 50px;
+        }
+        .btn-primary {
+            width: 100px;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
-<h2>Product Details</h2>
-<div>
-    <h3 th:text="${product.productName}"></h3>
-    <p th:text="'Price: $' + ${product.productPrice}"></p>
-    <p th:text="'Available Amount: ' + ${product.productAmount}"></p>
-    <p th:text="${product.productDescription}"></p>
+<div class="header">
+    <div class="search">
+        <form action="/search" method="get">
+            <input type="text" id="productName" name="productName" placeholder="Search Products...">
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+        <form action="/search" method="get">
+            <input type="text" id="category" name="category" placeholder="Search by Category...">
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+    </div>
+</div>
 
-    <!-- Форма для добавления товара в корзину -->
-    <form action="/cart/add" method="post">
-        <input type="hidden" name="productId" th:value="${product.productId}" />
-        <label for="amount">Amount:</label>
-        <input type="number" id="amount" name="amount" min="1" value="1" />
-        <button type="submit">Добавить в корзину</button>
-    </form>
+<div th:if="${message}" style="color: red;">
+    <p th:text="${message}"></p>
+</div>
+
+
+<div class="menu">
+    <a href="/cart">Cart</a> | <a href="/profile">Profile</a>
+</div>
+<div class="product">
+    <h2>Product Details</h2>
+    <div>
+        <h3 th:text="${product.productName}"></h3>
+        <p th:text="'Price: $' + ${product.productPrice}"></p>
+        <p th:text="'Available Amount: ' + ${product.productAmount}"></p>
+        <p th:text="${product.productDescription}"></p>
+
+        <!-- Форма для добавления товара в корзину -->
+        <form action="/cart/add" method="post">
+            <input type="hidden" name="productId" th:value="${product.productId}" />
+            <label for="amount">Amount:</label>
+            <input type="number" id="amount" name="amount" min="1" value="1" />
+            <button type="submit">Добавить в корзину</button>
+        </form>
+    </div>
 </div>
 </body>
 </html>

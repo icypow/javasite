@@ -9,6 +9,7 @@ public class OrderProduct {
 
     @EmbeddedId
     private OrderProductID id;
+
     @ManyToOne
     @JoinColumn(name = "Order_ID", insertable = false, updatable = false)
     private Order order;

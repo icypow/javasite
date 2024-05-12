@@ -5,6 +5,7 @@ import com.shop.site.BuisnesLogic.*;
 
 import com.shop.site.Entity.Client;
 import jakarta.persistence.TypedQuery;
+import org.aspectj.weaver.ast.Or;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -46,6 +47,24 @@ public class ClientDAO extends CommonDAO<Client, Integer> {
             TypedQuery<Order> query = session.createQuery(queryString.toString(), Order.class);
             query.setParameter("client", client);
             Order res = query.getSingleResult();
+            t.commit();
+            return res;
+        } catch (jakarta.persistence.NoResultException e) {
+            t.rollback();
+            return null;
+        }
+    }
+
+
+    public List<Order> getOrders(Client client){
+        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+        Transaction t = session.beginTransaction();
+        try {
+
+            StringBuilder queryString = new StringBuilder("SELECT o FROM Order o WHERE o.client = :client AND o.status = 1");
+            TypedQuery<Order> query = session.createQuery(queryString.toString(), Order.class);
+            query.setParameter("client", client);
+            List<Order> res = query.getResultList();
             t.commit();
             return res;
         } catch (jakarta.persistence.NoResultException e) {

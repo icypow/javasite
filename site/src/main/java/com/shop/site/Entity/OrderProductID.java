@@ -20,4 +20,20 @@ public class OrderProductID implements Serializable{
         this.Product_ID = product;
         this.Order_ID = order;
     }
+
+    public int getProduct_ID() {
+        return Product_ID;
+    }
+
+    public void setProduct_ID(int product_ID) {
+        Product_ID = product_ID;
+    }
+
+    public int getOrder_ID() {
+        return Order_ID;
+    }
+
+    public void setOrder_ID(int order_ID) {
+        Order_ID = order_ID;
+    }
 }

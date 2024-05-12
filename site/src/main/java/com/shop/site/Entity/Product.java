@@ -10,6 +10,7 @@ import java.util.Set;
 @Table(name = "Product")
 @EqualsAndHashCode
 public class Product {
+    @EqualsAndHashCode.Include
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "Product_ID")

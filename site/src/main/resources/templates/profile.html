@@ -55,26 +55,59 @@
     </div>
 </div>
 
+<div th:if="${message}" style="color: red;">
+    <p th:text="${message}"></p>
+</div>
+
+
 <div class="menu">
     <a href="/cart">Cart</a> | <a href="/profile">Profile</a>
 </div>
-<div class="search">
-    <h2>Search Results</h2>
-    <!-- Если есть сообщение об отсутствии товара, отображаем его -->
-    <div class="message" th:if="${message}" style="color: red;">
-        <p th:text="${message}"></p>
+<div class="profile">
+    <h2>Your profile</h2>
+
+    <!-- Кнопка для выхода из аккаунта -->
+    <div class="exit">
+        <form action="/logout" method="post">
+            <button type="submit">Logout</button>
+        </form>
     </div>
 
-    <!-- Результаты поиска будут отображаться здесь -->
-    <div id="searchResults">
-        <ul>
-            <!-- Пройти по всем товарам и вывести их названия -->
-            <li th:each="product : ${searchResults}">
-                <!-- Создать ссылку для перехода на страницу товара -->
-                <a th:href="@{'/product?id=' + ${product.productId}}" th:text="${product.productName}"></a>
-            </li>
-        </ul>
-    </div>
+    <!-- Список заказов пользователя -->
+    <ul>
+        <li th:each="order : ${orders}">
+            Order № <span th:text="${order[0].orderProduct.id.Order_ID}"></span>
+            <button type="button" th:onclick="'toggleProducts('  +  ${order[0].orderProduct.id.Order_ID}  +  ')'">Show products</button>
+            <div th:id="'products_'+${order[0].orderProduct.id.Order_ID}" style="display: none;">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Product Name</th>
+                        <th>Quantity</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="product : ${order}">
+                        <td th:text="${product.product.productName}"></td>
+                        <td th:text="${product.orderProduct.poAmount}"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </li>
+    </ul>
+
+    <script>
+        function toggleProducts(orderId) {
+            console.log(orderId);
+            var productsDiv = document.getElementById("products_" + orderId);
+            if (productsDiv.style.display === "none") {
+                productsDiv.style.display = "block";
+            } else {
+                productsDiv.style.display = "none";
+            }
+        }
+    </script>
 </div>
 </body>
 </html>

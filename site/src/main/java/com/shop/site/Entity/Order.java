@@ -10,6 +10,7 @@ import java.util.Set;
 @Table(name = "OrderTable")
 @EqualsAndHashCode
 public class Order {
+    @EqualsAndHashCode.Include
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "Order_ID")
@@ -19,6 +20,7 @@ public class Order {
     @ManyToOne
     @JoinColumn(name = "Client_ID")
     private Client client;
+
 
     @Column(name = "Status")
     private int status;
