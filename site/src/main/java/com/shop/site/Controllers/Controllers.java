@@ -154,12 +154,12 @@ public class Controllers {
     @PostMapping("/cart/updateQuantity")
     public String updateCartItemQuantity(@AuthenticationPrincipal UserDetails user, @RequestParam("productId") int productId, @RequestParam("amount") int amount) {
         Product product = productsvc.findById(productId);
-        List<Product> lp = productsvc.findAll();
-        List<Order> lo = ordersvc.findAll();
-        List<OrderProduct> orpd = orderproductsvc.findAll();
-        System.out.println(lp);
-        System.out.println(lo);
-        System.out.println(orpd);
+//        List<Product> lp = productsvc.findAll();
+//        List<Order> lo = ordersvc.findAll();
+//        List<OrderProduct> orpd = orderproductsvc.findAll();
+//        System.out.println(lp);
+//        System.out.println(lo);
+//        System.out.println(orpd);
         Client client = clientsvc.findClientByLogin(user.getUsername());
         Order cart = clientsvc.getCart(client);
         // Обновление количества товара в заказе

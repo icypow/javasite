@@ -1,5 +1,6 @@
 package com.shop.site.Entity;
 import jakarta.persistence.*;
+import lombok.EqualsAndHashCode;
 
 import java.math.BigDecimal;
 import java.sql.Date;
@@ -7,12 +8,14 @@ import java.util.Set;
 
 @Entity
 @Table(name = "OrderTable")
+@EqualsAndHashCode
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "Order_ID")
     private int orderId;
 
+    @EqualsAndHashCode.Exclude
     @ManyToOne
     @JoinColumn(name = "Client_ID")
     private Client client;
@@ -29,6 +32,7 @@ public class Order {
     @Column(name = "Delivery_date")
     private Date deliveryDate;
 
+    @EqualsAndHashCode.Exclude
     @OneToMany(cascade = {CascadeType.REMOVE}, fetch = FetchType.LAZY, mappedBy = "order")
     private Set<OrderProduct> products;
 

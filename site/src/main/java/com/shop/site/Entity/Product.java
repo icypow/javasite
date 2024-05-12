@@ -1,5 +1,6 @@
 package com.shop.site.Entity;
 import jakarta.persistence.*;
+import lombok.EqualsAndHashCode;
 
 import java.math.BigDecimal;
 import java.util.Set;
@@ -7,6 +8,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "Product")
+@EqualsAndHashCode
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -27,12 +29,18 @@ public class Product {
     @Column(name = "Relevance")
     private int relevance;
 
+
+    @EqualsAndHashCode.Exclude
     @OneToMany(cascade = {CascadeType.REMOVE}, fetch = FetchType.LAZY, mappedBy = "product")
     private Set<ProductCategory> categories;
 
+
+    @EqualsAndHashCode.Exclude
     @OneToMany(cascade = {CascadeType.REMOVE}, mappedBy = "product")
     private Set<Review> reviews;
 
+
+    @EqualsAndHashCode.Exclude
     @OneToMany(cascade = {CascadeType.REMOVE}, mappedBy = "product")
     private Set<OrderProduct> orders;
 
@@ -112,11 +120,11 @@ public class Product {
         this.orders = orders;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Product that = (Product) o;
-        return productId == that.getProductId();
-    }
+
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (o == null || getClass() != o.getClass()) return false;
+//        Product that = (Product) o;
+//        return productId == that.getProductId();
+//    }
 }
