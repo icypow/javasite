@@ -25,4 +25,5 @@ public class ProductDAO extends CommonDAO<Product, Integer> {
             return null;
         }
     }
+
 }

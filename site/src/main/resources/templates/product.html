@@ -79,6 +79,34 @@
             <button type="submit">Добавить в корзину</button>
         </form>
     </div>
+    <div class="reviews">
+        <h2>Отзывы</h2>
+        <!-- Блок для отображения существующих отзывов -->
+        <div th:each="review : ${reviews}">
+            <div class="review">
+                <p><strong>Автор:</strong> <span th:text="${review.client.name}"></span></p>
+                <p><strong>Рейтинг:</strong> <span th:text="${review.review.rate}"></span></p>
+                <p><strong>Отзыв:</strong> <span th:text="${review.review.reviewText}"></span></p>
+            </div>
+        </div>
+
+        <!-- Форма для добавления нового отзыва -->
+        <form action="/product/addReview" method="post">
+            <input type="hidden" name="productId" th:value="${product.productId}" />
+            <label for="rate">Оценка:</label>
+            <select id="rate" name="rate">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            <br/>
+            <label for="reviewText">Отзыв:</label><br/>
+            <textarea id="reviewText" name="reviewText" rows="4" cols="50"></textarea><br/>
+            <button type="submit">Оставить отзыв</button>
+        </form>
+    </div>
 </div>
 </body>
 </html>

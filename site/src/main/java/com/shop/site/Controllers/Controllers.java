@@ -116,12 +116,30 @@ public class Controllers {
             // Если товар с указанным ID не найден, перенаправляем на страницу поиска
             return "redirect:/search";
         }
+        List<Review> reviews = reviewsvc.getProductReviews(product);
+        List<ReviewWithAuthor> rwas = new ArrayList<>();
+        for (Review review : reviews){
+            Client client = clientsvc.findById(review.getClient().getClientId());
+            ReviewWithAuthor rwa = new ReviewWithAuthor(review, client);
+            rwas.add(rwa);
+        }
+
         // Если товар найден, передаем его информацию на страницу
+        model.addAttribute("reviews", rwas);
         model.addAttribute("product", product);
         return "product";
     }
 
+    @PostMapping("/product/addReview")
+    public String addReview(@AuthenticationPrincipal UserDetails user, @RequestParam(name = "productId") int productId, @RequestParam(name = "rate") int rate, @RequestParam(name = "reviewText") String reviewText){
+        Client client = clientsvc.findClientByLogin(user.getUsername());
+        Product product = productsvc.findById(productId);
+        Review review = new Review(product, client, rate, reviewText);
+        reviewsvc.save(review);
+        return "redirect:/product?id=" + productId;
 
+
+    }
 
     @GetMapping("/cart")
     public String viewCart(@AuthenticationPrincipal UserDetails user, Model model) {
