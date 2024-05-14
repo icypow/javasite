@@ -44,7 +44,7 @@ CREATE TABLE ProductCategory (
   Product_ID int,
   Category_ID int,
   Category_Priority int,
-  Category_Values text[], 
+  Category_Values text[],
   CONSTRAINT "FK_Product&Category.Category_ID"
     FOREIGN KEY (Category_ID)
       REFERENCES Category(Category_ID),

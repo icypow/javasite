@@ -164,8 +164,13 @@ public class Controllers {
     }
 
     @PostMapping("/cart/add")
-    public String addToCart(@AuthenticationPrincipal UserDetails user, @RequestParam("productId") int productId, @RequestParam("amount") int amount) {
+    public String addToCart(@AuthenticationPrincipal UserDetails user, @RequestParam("productId") int productId, @RequestParam("amount") int amount, Model model) {
         Product product = productsvc.findById(productId);
+        if (product.getProductAmount() < amount) {
+            model.addAttribute("messageprod", "Only " + product.getProductAmount() + " of " + product.getProductName() + " in stock");
+            model.addAttribute("product", product);
+            return "product";
+        }
         Client client = clientsvc.findClientByLogin(user.getUsername());
         Order cart = clientsvc.getCart(client);
         if (cart == null){
@@ -202,10 +207,42 @@ public class Controllers {
     }
 
     @PostMapping("/cart/confirmOrder")
-    public String confirmOrder(@AuthenticationPrincipal UserDetails user) {
+    public String confirmOrder(@AuthenticationPrincipal UserDetails user, Model model) {
         // Подтверждение заказа
         Client client = clientsvc.findClientByLogin(user.getUsername());
         Order cart = clientsvc.getCart(client);
+        List<OrderProduct> orderProducts = ordersvc.getOrderProducts(cart);
+        if (orderProducts.isEmpty()) {
+            model.addAttribute("messageprod", "Корзина пустая!");
+            List<OrderProduct> cartProducts = ordersvc.getOrderProducts(cart);
+            List<CartItemDTO> cartItems = new ArrayList<>();
+            for (OrderProduct orderProduct : cartProducts) {
+                Product product2 = productsvc.findById(orderProduct.getProduct().getProductId());
+                CartItemDTO cartItemDTO = new CartItemDTO(orderProduct, product2);
+                cartItems.add(cartItemDTO);
+            }
+            cartItems.sort((x,y)->x.getProduct().getProductName().compareTo(y.getProduct().getProductName()));
+            model.addAttribute("cartItems", cartItems);
+            return "cart";
+        }
+        for (OrderProduct productwithamount : orderProducts){
+            Product product = productsvc.findById(productwithamount.getProduct().getProductId());
+            if (productwithamount.getPoAmount() > product.getProductAmount()) {
+                model.addAttribute("messageprod", "Only " + product.getProductAmount() + " of " + product.getProductName() + " in stock");
+                List<OrderProduct> cartProducts = ordersvc.getOrderProducts(cart);
+                List<CartItemDTO> cartItems = new ArrayList<>();
+                for (OrderProduct orderProduct : cartProducts) {
+                    Product product2 = productsvc.findById(orderProduct.getProduct().getProductId());
+                    CartItemDTO cartItemDTO = new CartItemDTO(orderProduct, product2);
+                    cartItems.add(cartItemDTO);
+                }
+                cartItems.sort((x,y)->x.getProduct().getProductName().compareTo(y.getProduct().getProductName()));
+                model.addAttribute("cartItems", cartItems);
+                return "cart";
+            }
+            product.setProductAmount(product.getProductAmount() - productwithamount.getPoAmount());
+            productsvc.update(product);
+        }
         cart.setStatus(1);
         ordersvc.update(cart);
         cart = new Order(client, 0, 0, null, null);
@@ -230,7 +267,7 @@ public class Controllers {
             cartItems.sort((x,y)->x.getProduct().getProductName().compareTo(y.getProduct().getProductName()));
             listOfOrders.add(cartItems);
         }
-
+        model.addAttribute(client);
         model.addAttribute("orders", listOfOrders);
         return "profile";
     }

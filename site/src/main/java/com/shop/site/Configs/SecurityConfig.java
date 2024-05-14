@@ -40,7 +40,7 @@ public class SecurityConfig {
 //                                .passwordParameter("password")
                                 .loginPage("/login").permitAll()
                                 .defaultSuccessUrl("/cart")
-                                //.failureUrl("/register?failure")
+                                //.failureUrl("/login?error=1")
                                 //.loginProcessingUrl("/ authentication/ login/ process")
 
 

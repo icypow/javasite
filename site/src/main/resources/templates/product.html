@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cart</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../styles.css">
     <style>
         body {
             background-color: #f8f9fa;
@@ -76,36 +76,42 @@
             <input type="hidden" name="productId" th:value="${product.productId}" />
             <label for="amount">Amount:</label>
             <input type="number" id="amount" name="amount" min="1" value="1" />
-            <button type="submit">Добавить в корзину</button>
+            <button type="submit">Add to cart</button>
         </form>
+        <div class="messageprod" th:if="${messageprod}">
+            <p th:text="${messageprod}"></p>
+        </div>
     </div>
     <div class="reviews">
-        <h2>Отзывы</h2>
+        <h2>Reviews</h2>
         <!-- Блок для отображения существующих отзывов -->
-        <div th:each="review : ${reviews}">
+        <div th:each="review : ${reviews}" class="review-container">
             <div class="review">
-                <p><strong>Автор:</strong> <span th:text="${review.client.name}"></span></p>
-                <p><strong>Рейтинг:</strong> <span th:text="${review.review.rate}"></span></p>
-                <p><strong>Отзыв:</strong> <span th:text="${review.review.reviewText}"></span></p>
+                <p><strong>Author:</strong> <span th:text="${review.client.name}"></span></p>
+                <p><strong>Rate:</strong> <span th:text="${review.review.rate}"></span></p>
+                <p><strong>Review:</strong> <span th:text="${review.review.reviewText}"></span></p>
             </div>
         </div>
 
         <!-- Форма для добавления нового отзыва -->
-        <form action="/product/addReview" method="post">
-            <input type="hidden" name="productId" th:value="${product.productId}" />
-            <label for="rate">Оценка:</label>
-            <select id="rate" name="rate">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select>
-            <br/>
-            <label for="reviewText">Отзыв:</label><br/>
-            <textarea id="reviewText" name="reviewText" rows="4" cols="50"></textarea><br/>
-            <button type="submit">Оставить отзыв</button>
-        </form>
+        <div class="review-form">
+            <h3>Your review</h3>
+            <form action="/product/addReview" method="post">
+                <input type="hidden" name="productId" th:value="${product.productId}" />
+                <label for="rate">Rate:</label>
+                <select id="rate" name="rate">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <br/>
+                <label for="reviewText">Review:</label><br/>
+                <textarea id="reviewText" name="reviewText" rows="4" cols="50"></textarea><br/>
+                <button type="submit">Leave review</button>
+            </form>
+        </div>
     </div>
 </div>
 </body>

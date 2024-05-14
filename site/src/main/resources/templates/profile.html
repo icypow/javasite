@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cart</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../styles.css">
     <style>
         body {
             background-color: #f8f9fa;
@@ -65,13 +65,50 @@
 </div>
 <div class="profile">
     <h2>Your profile</h2>
+    <div class="profile-info">
+        <h3>Your Information</h3>
+        <p>
+            <strong>Name:</strong>
+            <span th:text="${client.name}" id="clientName"></span>
+            <input type="text" id="newName" style="display: none;">
+            <button onclick="editInfo('newName', 'clientName')">Edit</button>
+            <button onclick="saveInfo('newName', 'clientName')">Save</button>
+        </p>
+        <p>
+            <strong>Email:</strong>
+            <span th:text="${client.email}" id="clientEmail"></span>
+            <input type="email" id="newEmail" style="display: none;">
+            <button onclick="editInfo('newEmail', 'clientEmail')">Edit</button>
+            <button onclick="saveInfo('newEmail', 'clientEmail')">Save</button>
+        </p>
+        <!-- Добавьте аналогично поля для Phone и Address -->
+    </div>
 
+    <script>
+        function editInfo(inputId, spanId) {
+            document.getElementById(inputId).style.display = 'inline-block';
+            document.getElementById(spanId).style.display = 'none';
+        }
+
+        function saveInfo(inputId, spanId) {
+            var newValue = document.getElementById(inputId).value;
+            // Отправка нового значения на сервер для обновления профиля
+            // Здесь можно использовать AJAX запрос
+            console.log('New value:', newValue);
+            // После успешного обновления, обновить отображаемое значение
+            document.getElementById(spanId).innerText = newValue;
+            // Скрыть поле ввода и показать отображаемое значение
+            document.getElementById(inputId).style.display = 'none';
+            document.getElementById(spanId).style.display = 'inline';
+        }
+    </script>
     <!-- Кнопка для выхода из аккаунта -->
     <div class="exit">
         <form action="/logout" method="post">
             <button type="submit">Logout</button>
         </form>
     </div>
+
 
     <!-- Список заказов пользователя -->
     <ul>
