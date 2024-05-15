@@ -50,7 +50,6 @@
                 <!-- Кнопка для удаления продукта из корзины -->
                 <form action="/cart/removeFromCart" method="post">
                     <input type="hidden" name="productId" th:value="${cartItem.product.productId}">
-
                     <button type="submit" class="btn btn-danger">Remove</button>
                 </form>
             </td>

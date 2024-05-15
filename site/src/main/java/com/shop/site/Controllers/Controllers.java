@@ -273,4 +273,17 @@ public class Controllers {
     }
 
 
+    @PostMapping("/profile/edit")
+    public String editProfile(@AuthenticationPrincipal UserDetails user, @RequestParam(name = "newName", required = false) String name, @RequestParam(name = "newEmail", required = false) String email,
+                              @RequestParam(name = "newAddress", required = false) String address, @RequestParam(name = "newPhone", required = false) String phone, @RequestParam(name = "newPassword", required = false) String password) {
+        Client client = clientsvc.findClientByLogin(user.getUsername());
+        // Обновление количества товара в заказе
+        if (!name.isEmpty()) client.setName(name);
+        if (!email.isEmpty()) client.setEmail(email);
+        if (!address.isEmpty()) client.setAddress(address);
+        if (!password.isEmpty()) client.setPassword(password);
+        if (!phone.isEmpty()) client.setPhone(phone);
+        clientsvc.update(client);
+        return "redirect:/profile";
+    }
 }

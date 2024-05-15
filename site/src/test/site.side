@@ -1,0 +1,1753 @@
+{
+  "id": "3575bdae-7800-4422-8622-589b0f74cf52",
+  "version": "2.0",
+  "name": "site",
+  "url": "http://localhost:8080/login",
+  "tests": [{
+    "id": "bf53f084-9aa1-4bec-8c4a-3e26c8aed0f5",
+    "name": "RegisterAndLogin",
+    "commands": [{
+      "id": "792df1ad-e980-4060-9c5c-42c327986ac5",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/cart",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6bc35c01-d660-4895-b0d5-83d395d0783e",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1280x812",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9f4851d8-46c3-4488-ad0e-29a52d47715e",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Register",
+      "targets": [
+        ["linkText=Register", "linkText"],
+        ["css=.btn-secondary", "css:finder"],
+        ["xpath=//a[contains(text(),'Register')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '\\register')]", "xpath:href"],
+        ["xpath=//a", "xpath:position"],
+        ["xpath=//a[contains(.,'Register')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4ec45d57-0309-402d-8a6e-bc45830e856b",
+      "comment": "",
+      "command": "click",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=username", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6593eeb4-9695-4029-8ec5-35571b7f6707",
+      "comment": "",
+      "command": "type",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=username", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "zxcvb"
+    }, {
+      "id": "47a1830e-ef7f-4a6f-bcdf-d89a38f92522",
+      "comment": "",
+      "command": "click",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1410ecb8-76b6-4da0-b9a1-f91a1efeccd0",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "zxcvb"
+    }, {
+      "id": "56290331-5129-4a72-a49b-c0bc31320071",
+      "comment": "",
+      "command": "click",
+      "target": "id=phone",
+      "targets": [
+        ["id=phone", "id"],
+        ["name=phone", "name"],
+        ["css=#phone", "css:finder"],
+        ["xpath=//input[@id='phone']", "xpath:attributes"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6d3e4087-b956-4e9c-911f-04f2f2e6e9ca",
+      "comment": "",
+      "command": "type",
+      "target": "id=phone",
+      "targets": [
+        ["id=phone", "id"],
+        ["name=phone", "name"],
+        ["css=#phone", "css:finder"],
+        ["xpath=//input[@id='phone']", "xpath:attributes"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "123456789"
+    }, {
+      "id": "44d84b5f-6d2b-4261-a361-85ef39d66293",
+      "comment": "",
+      "command": "click",
+      "target": "id=fullName",
+      "targets": [
+        ["id=fullName", "id"],
+        ["name=fullName", "name"],
+        ["css=#fullName", "css:finder"],
+        ["xpath=//input[@id='fullName']", "xpath:attributes"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f6000350-2908-4ffd-a904-7a655e905a47",
+      "comment": "",
+      "command": "type",
+      "target": "id=fullName",
+      "targets": [
+        ["id=fullName", "id"],
+        ["name=fullName", "name"],
+        ["css=#fullName", "css:finder"],
+        ["xpath=//input[@id='fullName']", "xpath:attributes"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": "Alex"
+    }, {
+      "id": "1517c060-4700-4e0b-a001-e5cfd420fcac",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Register')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6983e709-9fb9-4049-aa54-819c8c330df4",
+      "comment": "",
+      "command": "click",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=username", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "790f90c9-5050-4472-a54f-8ae65b973819",
+      "comment": "",
+      "command": "type",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=username", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "zxcvb"
+    }, {
+      "id": "74b192aa-3d4f-4907-a7d6-47f514962b15",
+      "comment": "",
+      "command": "click",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6177c759-d731-474c-b902-626a848ce66e",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "zxcvb"
+    }, {
+      "id": "1e0505a0-5b66-4805-9d25-094693f7593b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Login')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "07752739-bc41-45c8-ad15-4f96377e9dc9",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Profile",
+      "targets": [
+        ["linkText=Profile", "linkText"],
+        ["css=a:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'Profile')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/profile')]", "xpath:href"],
+        ["xpath=//a[2]", "xpath:position"],
+        ["xpath=//a[contains(.,'Profile')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ce0cf97e-c231-4fea-87c3-1ba3176d8d43",
+      "comment": "Совпало ли имя?",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3d69b773-d11c-4519-b89f-8099374e7c13",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=clientName",
+      "targets": [
+        ["id=clientName", "id"],
+        ["css=#clientName", "css:finder"],
+        ["xpath=//span[@id='clientName']", "xpath:attributes"],
+        ["xpath=//p/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Alex')]", "xpath:innerText"]
+      ],
+      "value": "Alex"
+    }, {
+      "id": "684d9357-97cf-4c55-9cb7-5bfd1011b4aa",
+      "comment": "Совпал ли номер телефона?",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "494481af-63fa-42b4-bd89-5ef2f6d118f6",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=clientPhone",
+      "targets": [
+        ["id=clientPhone", "id"],
+        ["css=#clientPhone", "css:finder"],
+        ["xpath=//span[@id='clientPhone']", "xpath:attributes"],
+        ["xpath=//p[3]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'123456789')]", "xpath:innerText"]
+      ],
+      "value": "123456789 "
+    }, {
+      "id": "11d31aea-caf3-47e1-b82c-20aabfbac7c2",
+      "comment": "Выход из аккаунта",
+      "command": "click",
+      "target": "css=button:nth-child(1)",
+      "targets": [
+        ["css=button:nth-child(1)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[4]", "xpath:attributes"],
+        ["xpath=//div[2]/form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Logout')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "6d48da3e-b107-4de0-ade8-c7bd2a84c486",
+    "name": "Search",
+    "commands": [{
+      "id": "9dbb6ec3-45f0-44e6-8f37-f68069c273c5",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "391e4760-47b5-4d74-80c5-2022a25826cc",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1280x812",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "50bfc1a7-9a7c-4c89-9ddc-192f2beec87d",
+      "comment": "",
+      "command": "click",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=username", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "35e119a4-35ed-4262-bb99-dbf198a7ec7b",
+      "comment": "",
+      "command": "type",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=username", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "zxcvb"
+    }, {
+      "id": "3704a68e-61e9-4132-aa1c-c3ad5ed37e34",
+      "comment": "",
+      "command": "click",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e473e2d5-bc20-4051-9527-d270fe70043c",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "zxcvb"
+    }, {
+      "id": "f1722321-c580-4860-bd7f-b398b58fba3d",
+      "comment": "Входим в аккаунт",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Login')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "86a04b16-304e-4acf-82d6-1f4658b33c35",
+      "comment": "",
+      "command": "click",
+      "target": "id=productName",
+      "targets": [
+        ["id=productName", "id"],
+        ["name=productName", "name"],
+        ["css=#productName", "css:finder"],
+        ["xpath=//input[@id='productName']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "57f4dfa9-0707-4ef6-8f1d-24f0644ac8fb",
+      "comment": "Найти продукт с заданным именем",
+      "command": "type",
+      "target": "id=productName",
+      "targets": [
+        ["id=productName", "id"],
+        ["name=productName", "name"],
+        ["css=#productName", "css:finder"],
+        ["xpath=//input[@id='productName']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Мегафон 200"
+    }, {
+      "id": "a6b8866c-8ad1-4b91-85a0-64cc9ea8ec3b",
+      "comment": "Поиск..",
+      "command": "click",
+      "target": "css=form:nth-child(1) > .btn",
+      "targets": [
+        ["css=form:nth-child(1) > .btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Search')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5a03ffb6-48e7-453b-bc42-66452612541d",
+      "comment": "Проверка ошибки поиск по продукту",
+      "command": "assertText",
+      "target": "css=p",
+      "targets": [
+        ["css=p", "css:finder"],
+        ["xpath=//p", "xpath:position"],
+        ["xpath=//p[contains(.,'Товар не найден: Мегафон 200')]", "xpath:innerText"]
+      ],
+      "value": "Товар не найден: Мегафон 200"
+    }, {
+      "id": "690cb2d2-6e08-4555-9e60-fdccb0e2c9f5",
+      "comment": "",
+      "command": "click",
+      "target": "id=productName",
+      "targets": [
+        ["id=productName", "id"],
+        ["name=productName", "name"],
+        ["css=#productName", "css:finder"],
+        ["xpath=//input[@id='productName']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7d988f99-e06b-4de7-ad8b-0fb8f5ae3b4e",
+      "comment": "Найти продукт с заданным именем",
+      "command": "type",
+      "target": "id=productName",
+      "targets": [
+        ["id=productName", "id"],
+        ["name=productName", "name"],
+        ["css=#productName", "css:finder"],
+        ["xpath=//input[@id='productName']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Мегафон 150"
+    }, {
+      "id": "cf43e3da-b81c-4f99-8490-de46bafca950",
+      "comment": "Поиск..",
+      "command": "click",
+      "target": "css=form:nth-child(1) > .btn",
+      "targets": [
+        ["css=form:nth-child(1) > .btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Search')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "30f77821-ca2a-494c-b8da-7e8ac14b1dc3",
+      "comment": "Попали ли мы на нужный товар?",
+      "command": "assertText",
+      "target": "css=.product > div > h3",
+      "targets": [
+        ["css=.product > div > h3", "css:finder"],
+        ["xpath=//h3", "xpath:position"],
+        ["xpath=//h3[contains(.,'Мегафон 150')]", "xpath:innerText"]
+      ],
+      "value": "Мегафон 150"
+    }, {
+      "id": "21499b15-74f3-4a7f-8172-8a761de26d55",
+      "comment": "",
+      "command": "click",
+      "target": "id=category",
+      "targets": [
+        ["id=category", "id"],
+        ["name=category", "name"],
+        ["css=#category", "css:finder"],
+        ["xpath=//input[@id='category']", "xpath:attributes"],
+        ["xpath=//form[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8cf0d82a-9e8b-40b9-8cce-b04c35669276",
+      "comment": "Найти продукты из данной категории",
+      "command": "type",
+      "target": "id=category",
+      "targets": [
+        ["id=category", "id"],
+        ["name=category", "name"],
+        ["css=#category", "css:finder"],
+        ["xpath=//input[@id='category']", "xpath:attributes"],
+        ["xpath=//form[2]/input", "xpath:position"]
+      ],
+      "value": "Газонокосилка"
+    }, {
+      "id": "726d22fd-600b-4fe5-ab69-517d0877445b",
+      "comment": "Поиск..",
+      "command": "click",
+      "target": "css=form:nth-child(2) > .btn",
+      "targets": [
+        ["css=form:nth-child(2) > .btn", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//form[2]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f1d8aeff-23fc-47c7-9c75-e5cea74e2772",
+      "comment": "Проверка ошибки по категории",
+      "command": "assertText",
+      "target": "css=p",
+      "targets": [
+        ["css=p", "css:finder"],
+        ["xpath=//p", "xpath:position"],
+        ["xpath=//p[contains(.,'Такой категории не существует: Газонокосилка')]", "xpath:innerText"]
+      ],
+      "value": "Такой категории не существует: Газонокосилка"
+    }, {
+      "id": "9ae460b4-c611-4a46-8cd1-5a7cf2d7c5f8",
+      "comment": "",
+      "command": "click",
+      "target": "id=category",
+      "targets": [
+        ["id=category", "id"],
+        ["name=category", "name"],
+        ["css=#category", "css:finder"],
+        ["xpath=//input[@id='category']", "xpath:attributes"],
+        ["xpath=//form[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3aaa6fb7-6ec9-4076-be13-aa9af459639f",
+      "comment": "",
+      "command": "type",
+      "target": "id=category",
+      "targets": [
+        ["id=category", "id"],
+        ["name=category", "name"],
+        ["css=#category", "css:finder"],
+        ["xpath=//input[@id='category']", "xpath:attributes"],
+        ["xpath=//form[2]/input", "xpath:position"]
+      ],
+      "value": "Чайник"
+    }, {
+      "id": "80348346-065e-47af-a05f-bcb61e6d33c4",
+      "comment": "",
+      "command": "click",
+      "target": "css=form:nth-child(2) > .btn",
+      "targets": [
+        ["css=form:nth-child(2) > .btn", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//form[2]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "665822b8-5dc5-4886-816b-c6e2b4166426",
+      "comment": "Нашелся ли товар из категории?",
+      "command": "assertText",
+      "target": "linkText=Bosch FastBoil",
+      "targets": [
+        ["linkText=Bosch FastBoil", "linkText"],
+        ["css=li > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Bosch FastBoil')]", "xpath:link"],
+        ["xpath=//div[@id='searchResults']/ul/li/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/product?id=1')]", "xpath:href"],
+        ["xpath=//li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Bosch FastBoil')]", "xpath:innerText"]
+      ],
+      "value": "Bosch FastBoil"
+    }, {
+      "id": "4afe37f4-9398-4a94-a18d-b003e1da6f9a",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Profile",
+      "targets": [
+        ["linkText=Profile", "linkText"],
+        ["css=a:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'Profile')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/profile')]", "xpath:href"],
+        ["xpath=//a[2]", "xpath:position"],
+        ["xpath=//a[contains(.,'Profile')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b11ddeac-7ee7-448d-a181-d68889576e83",
+      "comment": "Выход из аккаунта",
+      "command": "click",
+      "target": "css=button:nth-child(1)",
+      "targets": [
+        ["css=button:nth-child(1)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[4]", "xpath:attributes"],
+        ["xpath=//div[2]/form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Logout')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "c6babf7b-8e13-47e4-94c2-df131cf6517e",
+    "name": "PerformPurchase",
+    "commands": [{
+      "id": "32fe8780-9154-4bd0-a0e3-ff20a44ae862",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f201f3c0-480c-440a-abc5-cdfe99065fbd",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1280x812",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a5cc1077-b081-433c-8efc-452f6bd1fb34",
+      "comment": "",
+      "command": "click",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=username", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f822e21b-2335-451f-837d-d8cc00420dc7",
+      "comment": "",
+      "command": "type",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=username", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "qwerty"
+    }, {
+      "id": "2fe1c534-a455-456f-83d1-1843d98cb303",
+      "comment": "",
+      "command": "click",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1e922271-acd3-455a-85cb-cc53c555156a",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "12345"
+    }, {
+      "id": "cd0918c5-5007-4cfa-823a-5b6309c45930",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Login')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f2dc373e-0e8b-41b9-a07c-510bf9ccf6b1",
+      "comment": "",
+      "command": "click",
+      "target": "id=category",
+      "targets": [
+        ["id=category", "id"],
+        ["name=category", "name"],
+        ["css=#category", "css:finder"],
+        ["xpath=//input[@id='category']", "xpath:attributes"],
+        ["xpath=//form[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a4323f0e-e985-4689-ac02-8db74aba5043",
+      "comment": "",
+      "command": "type",
+      "target": "id=category",
+      "targets": [
+        ["id=category", "id"],
+        ["name=category", "name"],
+        ["css=#category", "css:finder"],
+        ["xpath=//input[@id='category']", "xpath:attributes"],
+        ["xpath=//form[2]/input", "xpath:position"]
+      ],
+      "value": "Чайник"
+    }, {
+      "id": "0a355c96-57cd-4db7-bdc5-06b04d7b176a",
+      "comment": "",
+      "command": "click",
+      "target": "css=form:nth-child(2) > .btn",
+      "targets": [
+        ["css=form:nth-child(2) > .btn", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//form[2]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1fc4f461-4a8b-4a08-ad55-20cb1e11dc93",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Bosch FastBoil",
+      "targets": [
+        ["linkText=Bosch FastBoil", "linkText"],
+        ["css=li > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Bosch FastBoil')]", "xpath:link"],
+        ["xpath=//div[@id='searchResults']/ul/li/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/product?id=1')]", "xpath:href"],
+        ["xpath=//li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Bosch FastBoil')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "62c07571-9cc0-4696-8514-642e452d8c6c",
+      "comment": "",
+      "command": "click",
+      "target": "id=amount",
+      "targets": [
+        ["id=amount", "id"],
+        ["name=amount", "name"],
+        ["css=#amount", "css:finder"],
+        ["xpath=//input[@id='amount']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "76e9a27c-bdd9-4259-bba9-fc550f1d9a45",
+      "comment": "Пробуем заказать товара больше, чем имеется",
+      "command": "type",
+      "target": "id=amount",
+      "targets": [
+        ["id=amount", "id"],
+        ["name=amount", "name"],
+        ["css=#amount", "css:finder"],
+        ["xpath=//input[@id='amount']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "25"
+    }, {
+      "id": "43aa9e69-b024-4e9d-9fd6-898f42856af5",
+      "comment": "",
+      "command": "click",
+      "target": "css=button:nth-child(4)",
+      "targets": [
+        ["css=button:nth-child(4)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[3]", "xpath:attributes"],
+        ["xpath=//div[3]/div/form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Add to cart')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4ac0466e-de6e-4b49-8b7a-bb6655fa34c4",
+      "comment": "Ошибка по кол-ву товара",
+      "command": "assertText",
+      "target": "css=p:nth-child(1)",
+      "targets": [
+        ["css=p:nth-child(1)", "css:finder"],
+        ["xpath=//div[5]/div/div/p", "xpath:position"],
+        ["xpath=//p[contains(.,'Only 10 of Bosch FastBoil in stock')]", "xpath:innerText"]
+      ],
+      "value": "Only 10 of Bosch FastBoil in stock"
+    }, {
+      "id": "c287ea64-9e5e-4f9b-9617-5346b3b93f52",
+      "comment": "",
+      "command": "click",
+      "target": "id=amount",
+      "targets": [
+        ["id=amount", "id"],
+        ["name=amount", "name"],
+        ["css=#amount", "css:finder"],
+        ["xpath=//input[@id='amount']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "65ca8613-9130-437b-9d9b-9e6593804569",
+      "comment": "",
+      "command": "type",
+      "target": "id=amount",
+      "targets": [
+        ["id=amount", "id"],
+        ["name=amount", "name"],
+        ["css=#amount", "css:finder"],
+        ["xpath=//input[@id='amount']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "3"
+    }, {
+      "id": "42a21151-2828-4c6c-a628-d090e0bcb697",
+      "comment": "",
+      "command": "click",
+      "target": "css=button:nth-child(4)",
+      "targets": [
+        ["css=button:nth-child(4)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[3]", "xpath:attributes"],
+        ["xpath=//div[4]/div/form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Add to cart')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "88f956b4-b6ff-46b1-b5ef-a4c9fb918e5a",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Cart",
+      "targets": [
+        ["linkText=Cart", "linkText"],
+        ["css=a:nth-child(1)", "css:finder"],
+        ["xpath=//a[contains(text(),'Cart')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/cart')]", "xpath:href"],
+        ["xpath=//a", "xpath:position"],
+        ["xpath=//a[contains(.,'Cart')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f01bbbbc-029a-45f8-9c2a-af8ec4430715",
+      "comment": "Добавился ли чайник?",
+      "command": "assertText",
+      "target": "css=td:nth-child(1)",
+      "targets": [
+        ["css=td:nth-child(1)", "css:finder"],
+        ["xpath=//td", "xpath:position"],
+        ["xpath=//td[contains(.,'Bosch FastBoil')]", "xpath:innerText"]
+      ],
+      "value": "Bosch FastBoil"
+    }, {
+      "id": "7cefa6e6-45bf-4908-953d-4fcd420da89b",
+      "comment": "А нужного ли количества?",
+      "command": "assertText",
+      "target": "css=span:nth-child(1)",
+      "targets": [
+        ["css=span:nth-child(1)", "css:finder"],
+        ["xpath=//td[2]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'3')]", "xpath:innerText"]
+      ],
+      "value": "3"
+    }, {
+      "id": "ec4637fa-34ce-4eee-9393-adbd7afe79ca",
+      "comment": "",
+      "command": "click",
+      "target": "id=amount",
+      "targets": [
+        ["id=amount", "id"],
+        ["name=amount", "name"],
+        ["css=#amount", "css:finder"],
+        ["xpath=//input[@id='amount']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "22d56071-3623-4ed1-be45-671a0edb92f9",
+      "comment": "Изменим кол-во товара в корзине",
+      "command": "type",
+      "target": "id=amount",
+      "targets": [
+        ["id=amount", "id"],
+        ["name=amount", "name"],
+        ["css=#amount", "css:finder"],
+        ["xpath=//input[@id='amount']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "5"
+    }, {
+      "id": "e87982b2-dafc-456b-affc-03e29d67e4db",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(3)",
+      "targets": [
+        ["css=.btn:nth-child(3)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[3]", "xpath:attributes"],
+        ["xpath=//td[2]/form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Update')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0e23ba0d-fbb0-4e6c-a1a1-642721076699",
+      "comment": "Поменялось ли значение в корзине?",
+      "command": "assertText",
+      "target": "css=span:nth-child(1)",
+      "targets": [
+        ["css=span:nth-child(1)", "css:finder"],
+        ["xpath=//td[2]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'5')]", "xpath:innerText"]
+      ],
+      "value": "5"
+    }, {
+      "id": "5f76c4e7-858d-4bcb-8e5f-173543e494ba",
+      "comment": "",
+      "command": "click",
+      "target": "id=amount",
+      "targets": [
+        ["id=amount", "id"],
+        ["name=amount", "name"],
+        ["css=#amount", "css:finder"],
+        ["xpath=//input[@id='amount']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f670c2f1-0c10-4584-ac51-c2b87b1fa155",
+      "comment": "Попробуем сделать заказ, где кол-во некоторого товара превосходит кол-во на складе",
+      "command": "type",
+      "target": "id=amount",
+      "targets": [
+        ["id=amount", "id"],
+        ["name=amount", "name"],
+        ["css=#amount", "css:finder"],
+        ["xpath=//input[@id='amount']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "50"
+    }, {
+      "id": "362a2a10-c903-4a5d-b807-0f7f2179ea2f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(3)",
+      "targets": [
+        ["css=.btn:nth-child(3)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[3]", "xpath:attributes"],
+        ["xpath=//td[2]/form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Update')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e943a7bb-93bf-41a8-bcdc-6f184a826dda",
+      "comment": "Заказываем",
+      "command": "click",
+      "target": "css=.btn-success",
+      "targets": [
+        ["css=.btn-success", "css:finder"],
+        ["xpath=(//button[@type='submit'])[5]", "xpath:attributes"],
+        ["xpath=//div[3]/form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Confirm order')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4b1f75ec-c71c-4fd0-9c84-a2db733102a3",
+      "comment": "Ошибка заказа с данными о товаре",
+      "command": "assertText",
+      "target": "css=.message",
+      "targets": [
+        ["css=.message", "css:finder"],
+        ["xpath=//div[6]", "xpath:position"],
+        ["xpath=//div[contains(.,'Only 10 of Bosch FastBoil in stock')]", "xpath:innerText"]
+      ],
+      "value": "Only 10 of Bosch FastBoil in stock"
+    }, {
+      "id": "e38bf5fd-1991-412e-8d35-383263a7e2a5",
+      "comment": "",
+      "command": "click",
+      "target": "id=amount",
+      "targets": [
+        ["id=amount", "id"],
+        ["name=amount", "name"],
+        ["css=#amount", "css:finder"],
+        ["xpath=//input[@id='amount']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9e0dee37-7a54-42fc-af33-5f2a8c5d50d5",
+      "comment": "Изменим кол-во товара и совершим покупку.",
+      "command": "type",
+      "target": "id=amount",
+      "targets": [
+        ["id=amount", "id"],
+        ["name=amount", "name"],
+        ["css=#amount", "css:finder"],
+        ["xpath=//input[@id='amount']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "2"
+    }, {
+      "id": "3b9f9a43-d39d-4ff5-bee2-e83d72aba3d8",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(3)",
+      "targets": [
+        ["css=.btn:nth-child(3)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[3]", "xpath:attributes"],
+        ["xpath=//td[2]/form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Update')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6796e93a-cf8b-4900-9a8d-56a718b89603",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-success",
+      "targets": [
+        ["css=.btn-success", "css:finder"],
+        ["xpath=(//button[@type='submit'])[5]", "xpath:attributes"],
+        ["xpath=//div[3]/form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Confirm order')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "29205cbc-6612-468f-9fad-f471cc446751",
+      "comment": "",
+      "command": "click",
+      "target": "css=li > button",
+      "targets": [
+        ["css=li > button", "css:finder"],
+        ["xpath=(//button[@type='button'])[5]", "xpath:attributes"],
+        ["xpath=//li/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Show products')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c4727f7d-17a1-4ba0-9fbd-88fe5e8561e8",
+      "comment": "На странице профиля убедимся, что в истории заказов появился наш новый заказ",
+      "command": "assertText",
+      "target": "css=td:nth-child(1)",
+      "targets": [
+        ["css=td:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='products_1205']/table/tbody/tr/td", "xpath:idRelative"],
+        ["xpath=//td", "xpath:position"],
+        ["xpath=//td[contains(.,'Bosch FastBoil')]", "xpath:innerText"]
+      ],
+      "value": "Bosch FastBoil"
+    }, {
+      "id": "1ae85341-b003-44d5-9a85-3d2f4a7d7762",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=td:nth-child(2)",
+      "targets": [
+        ["css=td:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='products_1205']/table/tbody/tr/td[2]", "xpath:idRelative"],
+        ["xpath=//td[2]", "xpath:position"],
+        ["xpath=//td[contains(.,'2')]", "xpath:innerText"]
+      ],
+      "value": "2"
+    }, {
+      "id": "f3b4cf9f-f316-4141-a420-a7631eb044b7",
+      "comment": "Выход из аккаунта",
+      "command": "click",
+      "target": "css=button:nth-child(1)",
+      "targets": [
+        ["css=button:nth-child(1)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[4]", "xpath:attributes"],
+        ["xpath=//div[2]/form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Logout')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "ad734f98-4fda-408b-be9b-6f2baf8ecd71",
+    "name": "LeaveComment",
+    "commands": [{
+      "id": "4addd544-bff7-4d35-ba53-cabaf45577ca",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "39362210-a003-4b00-a3db-1122de64a94b",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1280x812",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "afbf6b53-fe54-43d3-92ae-393686b247b1",
+      "comment": "",
+      "command": "click",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=username", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "105ee7bb-db85-4801-a5c3-adb64b6ff48b",
+      "comment": "",
+      "command": "type",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=username", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "qwerty"
+    }, {
+      "id": "51936c98-d375-451f-9a04-04abdf5a55b6",
+      "comment": "",
+      "command": "click",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8e8e98f6-f0f5-4aee-957b-c5a312cfce8a",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "12345"
+    }, {
+      "id": "84f13d0b-a7cf-4ba2-b169-03bbc7b72df8",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Login')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "07bbd52a-d3c2-40c4-9968-5586eccafab8",
+      "comment": "",
+      "command": "click",
+      "target": "id=productName",
+      "targets": [
+        ["id=productName", "id"],
+        ["name=productName", "name"],
+        ["css=#productName", "css:finder"],
+        ["xpath=//input[@id='productName']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6112053e-4cb9-4e6e-9896-b78b4034386d",
+      "comment": "Перейдем на страницу товара и оставим отзыв",
+      "command": "type",
+      "target": "id=productName",
+      "targets": [
+        ["id=productName", "id"],
+        ["name=productName", "name"],
+        ["css=#productName", "css:finder"],
+        ["xpath=//input[@id='productName']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Мегафон 150"
+    }, {
+      "id": "25d8f998-142f-4b1e-8243-2ceb6147a7e9",
+      "comment": "",
+      "command": "click",
+      "target": "css=form:nth-child(1) > .btn",
+      "targets": [
+        ["css=form:nth-child(1) > .btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Search')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f28f64a4-f962-4b1a-9736-3a15e9fd89cd",
+      "comment": "",
+      "command": "click",
+      "target": "id=reviewText",
+      "targets": [
+        ["id=reviewText", "id"],
+        ["name=reviewText", "name"],
+        ["css=#reviewText", "css:finder"],
+        ["xpath=//textarea[@id='reviewText']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0241a4ba-ed8c-4ec2-9f65-6c8542d7b103",
+      "comment": "Впишем текст отзыва",
+      "command": "type",
+      "target": "id=reviewText",
+      "targets": [
+        ["id=reviewText", "id"],
+        ["name=reviewText", "name"],
+        ["css=#reviewText", "css:finder"],
+        ["xpath=//textarea[@id='reviewText']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Крутейший телефон! Очень понравился!"
+    }, {
+      "id": "ea82f994-5f62-48d0-a1a0-a8e390685732",
+      "comment": "",
+      "command": "click",
+      "target": "id=rate",
+      "targets": [
+        ["id=rate", "id"],
+        ["name=rate", "name"],
+        ["css=#rate", "css:finder"],
+        ["xpath=//select[@id='rate']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7ce3a0cf-4f27-4fb9-9ba2-17c26a415a54",
+      "comment": "Поставим оценку",
+      "command": "select",
+      "target": "id=rate",
+      "targets": [],
+      "value": "label=5"
+    }, {
+      "id": "682c4c02-f68a-4872-9a89-8fc4b7d3022b",
+      "comment": "",
+      "command": "click",
+      "target": "css=button:nth-child(9)",
+      "targets": [
+        ["css=button:nth-child(9)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[4]", "xpath:attributes"],
+        ["xpath=//div[2]/div/form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Leave review')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0fbd015f-a3fb-41f1-a96f-5423d119ebda",
+      "comment": "Проверим, верно ли отобразился автор отзыва",
+      "command": "assertText",
+      "target": "css=p:nth-child(1) > span",
+      "targets": [
+        ["css=p:nth-child(1) > span", "css:finder"],
+        ["xpath=//p/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Alexander Dolzhkov')]", "xpath:innerText"]
+      ],
+      "value": "Alexander Dolzhkov"
+    }, {
+      "id": "f535bf72-6183-4dbb-8260-88a7b9312e7d",
+      "comment": "Проверим, верно ли отобразилась оценка отзыва",
+      "command": "assertText",
+      "target": "css=p:nth-child(2) > span",
+      "targets": [
+        ["css=p:nth-child(2) > span", "css:finder"],
+        ["xpath=//p[2]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'5')]", "xpath:innerText"]
+      ],
+      "value": "5"
+    }, {
+      "id": "850bd593-4da9-402a-98a8-e30e81e3c135",
+      "comment": "Проверим, верно ли отобразился тект отзыва",
+      "command": "assertText",
+      "target": "css=p:nth-child(3) > span",
+      "targets": [
+        ["css=p:nth-child(3) > span", "css:finder"],
+        ["xpath=//p[3]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Крутейший телефон! Очень понравился!')]", "xpath:innerText"]
+      ],
+      "value": "Крутейший телефон! Очень понравился!"
+    }, {
+      "id": "073c345e-66ed-413d-9621-30843b62b559",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Profile",
+      "targets": [
+        ["linkText=Profile", "linkText"],
+        ["css=a:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'Profile')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/profile')]", "xpath:href"],
+        ["xpath=//a[2]", "xpath:position"],
+        ["xpath=//a[contains(.,'Profile')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7bc742a3-8f09-4b0d-a5b7-6352b5fa697a",
+      "comment": "Выход из аккаунта",
+      "command": "click",
+      "target": "css=button:nth-child(1)",
+      "targets": [
+        ["css=button:nth-child(1)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[4]", "xpath:attributes"],
+        ["xpath=//div[2]/form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Logout')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "33c2ac5f-0570-4fd0-bb82-ef080fc63cca",
+    "name": "EditProfile",
+    "commands": [{
+      "id": "225e6c87-c75f-44a8-b62d-ea28baa4d748",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c4d4cf26-ff19-489b-bd50-c268c21667e4",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1280x812",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "37a266c4-5e93-436e-8e30-cac6b845dcee",
+      "comment": "",
+      "command": "click",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=username", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "87d2536e-b2da-4b16-aa8e-9f446e51562c",
+      "comment": "",
+      "command": "type",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=username", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "qwerty"
+    }, {
+      "id": "8163542b-b2b5-4a38-a0ef-cca12ef75680",
+      "comment": "",
+      "command": "click",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "04a8f1b5-800c-4ed1-b56d-0f1ace509126",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "12345"
+    }, {
+      "id": "0c10d2ec-c0e0-43ac-8263-7d520bcfdd94",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Login')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b3ea3806-93f6-4574-b5a2-1d52ce4bd209",
+      "comment": "Зайдем на страницу профиля",
+      "command": "click",
+      "target": "linkText=Profile",
+      "targets": [
+        ["linkText=Profile", "linkText"],
+        ["css=a:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'Profile')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/profile')]", "xpath:href"],
+        ["xpath=//a[2]", "xpath:position"],
+        ["xpath=//a[contains(.,'Profile')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "fcaf8490-909c-4498-9f1c-b51866cc1b0d",
+      "comment": "Активируем кнопку редактирования и введем новое значение в поле имя",
+      "command": "click",
+      "target": "css=p:nth-child(1) > button",
+      "targets": [
+        ["css=p:nth-child(1) > button", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//p/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Edit')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a6354a61-cc6c-4dbd-a5f8-51cb426cb96b",
+      "comment": "",
+      "command": "click",
+      "target": "id=newName",
+      "targets": [
+        ["id=newName", "id"],
+        ["name=newName", "name"],
+        ["css=#newName", "css:finder"],
+        ["xpath=//input[@id='newName']", "xpath:attributes"],
+        ["xpath=//p/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ce1c8319-f928-4974-9759-2eb9eb7daf46",
+      "comment": "",
+      "command": "type",
+      "target": "id=newName",
+      "targets": [
+        ["id=newName", "id"],
+        ["name=newName", "name"],
+        ["css=#newName", "css:finder"],
+        ["xpath=//input[@id='newName']", "xpath:attributes"],
+        ["xpath=//p/input", "xpath:position"]
+      ],
+      "value": "Test Name"
+    }, {
+      "id": "eb51f528-8027-46a2-9626-d18a8be971fb",
+      "comment": "Активируем кнопку редактирования и введем новое значение в поле email",
+      "command": "click",
+      "target": "css=p:nth-child(2) > button",
+      "targets": [
+        ["css=p:nth-child(2) > button", "css:finder"],
+        ["xpath=(//button[@type='button'])[2]", "xpath:attributes"],
+        ["xpath=//p[2]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cda40c62-92d0-4ca4-95bb-0e3deb162f24",
+      "comment": "",
+      "command": "click",
+      "target": "id=newEmail",
+      "targets": [
+        ["id=newEmail", "id"],
+        ["name=newEmail", "name"],
+        ["css=#newEmail", "css:finder"],
+        ["xpath=//input[@id='newEmail']", "xpath:attributes"],
+        ["xpath=//p[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cf2dfdd0-e7ab-49a7-b137-9777676ee892",
+      "comment": "",
+      "command": "type",
+      "target": "id=newEmail",
+      "targets": [
+        ["id=newEmail", "id"],
+        ["name=newEmail", "name"],
+        ["css=#newEmail", "css:finder"],
+        ["xpath=//input[@id='newEmail']", "xpath:attributes"],
+        ["xpath=//p[2]/input", "xpath:position"]
+      ],
+      "value": "test@email.com"
+    }, {
+      "id": "7a6aef6b-5947-4ef3-a49e-3cd377728e41",
+      "comment": "Активируем кнопку редактирования и введем новое значение в поле телефон",
+      "command": "click",
+      "target": "css=p:nth-child(3) > button",
+      "targets": [
+        ["css=p:nth-child(3) > button", "css:finder"],
+        ["xpath=(//button[@type='button'])[3]", "xpath:attributes"],
+        ["xpath=//p[3]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e8fb8481-be45-46fd-8159-db8e7af5cbba",
+      "comment": "",
+      "command": "click",
+      "target": "id=newPhone",
+      "targets": [
+        ["id=newPhone", "id"],
+        ["name=newPhone", "name"],
+        ["css=#newPhone", "css:finder"],
+        ["xpath=//input[@id='newPhone']", "xpath:attributes"],
+        ["xpath=//p[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "dbb70593-685a-40bb-aaa1-34c12f54cd21",
+      "comment": "",
+      "command": "type",
+      "target": "id=newPhone",
+      "targets": [
+        ["id=newPhone", "id"],
+        ["name=newPhone", "name"],
+        ["css=#newPhone", "css:finder"],
+        ["xpath=//input[@id='newPhone']", "xpath:attributes"],
+        ["xpath=//p[3]/input", "xpath:position"]
+      ],
+      "value": "88005553535"
+    }, {
+      "id": "3f044f82-a780-4d2e-8dd1-deb667f21e9a",
+      "comment": "Активируем кнопку редактирования и введем новое значение в поле адрес",
+      "command": "click",
+      "target": "css=p:nth-child(4) > button",
+      "targets": [
+        ["css=p:nth-child(4) > button", "css:finder"],
+        ["xpath=(//button[@type='button'])[4]", "xpath:attributes"],
+        ["xpath=//p[4]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d82083d0-45f9-44d7-8332-907941747297",
+      "comment": "",
+      "command": "click",
+      "target": "id=newAddress",
+      "targets": [
+        ["id=newAddress", "id"],
+        ["name=newAddress", "name"],
+        ["css=#newAddress", "css:finder"],
+        ["xpath=//input[@id='newAddress']", "xpath:attributes"],
+        ["xpath=//p[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2e89e634-030e-4547-afc6-e37bec0e0405",
+      "comment": "",
+      "command": "type",
+      "target": "id=newAddress",
+      "targets": [
+        ["id=newAddress", "id"],
+        ["name=newAddress", "name"],
+        ["css=#newAddress", "css:finder"],
+        ["xpath=//input[@id='newAddress']", "xpath:attributes"],
+        ["xpath=//p[4]/input", "xpath:position"]
+      ],
+      "value": "Moscow"
+    }, {
+      "id": "0acc24bb-fc00-4be3-a7a3-ba1a51a10835",
+      "comment": "Активируем кнопку редактирования и введем новое значение в поле пароль",
+      "command": "click",
+      "target": "id=newPassword",
+      "targets": [
+        ["id=newPassword", "id"],
+        ["name=newPassword", "name"],
+        ["css=#newPassword", "css:finder"],
+        ["xpath=//input[@id='newPassword']", "xpath:attributes"],
+        ["xpath=//p[5]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0f03c0ab-22c9-48c7-b6b6-f60ae8280155",
+      "comment": "",
+      "command": "type",
+      "target": "id=newPassword",
+      "targets": [
+        ["id=newPassword", "id"],
+        ["name=newPassword", "name"],
+        ["css=#newPassword", "css:finder"],
+        ["xpath=//input[@id='newPassword']", "xpath:attributes"],
+        ["xpath=//p[5]/input", "xpath:position"]
+      ],
+      "value": "54321"
+    }, {
+      "id": "a5e8bb88-1f5e-4835-847c-46b106b98a67",
+      "comment": "",
+      "command": "click",
+      "target": "css=button:nth-child(6)",
+      "targets": [
+        ["css=button:nth-child(6)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[3]", "xpath:attributes"],
+        ["xpath=//div[3]/div/form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Save')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "52b6daeb-6170-4f11-876d-0c52e26d08e7",
+      "comment": "Проверим, изменилось ли имя",
+      "command": "assertText",
+      "target": "id=clientName",
+      "targets": [
+        ["id=clientName", "id"],
+        ["css=#clientName", "css:finder"],
+        ["xpath=//span[@id='clientName']", "xpath:attributes"],
+        ["xpath=//p/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Test Name')]", "xpath:innerText"]
+      ],
+      "value": "Test Name"
+    }, {
+      "id": "cca7af3c-aca9-47d5-ba6b-e1aa1ba79277",
+      "comment": "email..",
+      "command": "assertText",
+      "target": "id=clientEmail",
+      "targets": [
+        ["id=clientEmail", "id"],
+        ["css=#clientEmail", "css:finder"],
+        ["xpath=//span[@id='clientEmail']", "xpath:attributes"],
+        ["xpath=//p[2]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'test@email.com')]", "xpath:innerText"]
+      ],
+      "value": "test@email.com"
+    }, {
+      "id": "3445201f-1239-4158-8c2c-2f34f278a958",
+      "comment": "телефон..",
+      "command": "assertText",
+      "target": "id=clientPhone",
+      "targets": [
+        ["id=clientPhone", "id"],
+        ["css=#clientPhone", "css:finder"],
+        ["xpath=//span[@id='clientPhone']", "xpath:attributes"],
+        ["xpath=//p[3]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'88005553535')]", "xpath:innerText"]
+      ],
+      "value": "88005553535"
+    }, {
+      "id": "ebdca5d2-5a3b-417b-aaee-9fadd84cbdc1",
+      "comment": "адрес..",
+      "command": "assertText",
+      "target": "id=clientAddress",
+      "targets": [
+        ["id=clientAddress", "id"],
+        ["css=#clientAddress", "css:finder"],
+        ["xpath=//span[@id='clientAddress']", "xpath:attributes"],
+        ["xpath=//p[4]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Moscow')]", "xpath:innerText"]
+      ],
+      "value": "Moscow"
+    }, {
+      "id": "f01b28ec-3cd9-4931-9208-23f8624430bf",
+      "comment": "Выйдем из профиля для проверки смены пароля",
+      "command": "click",
+      "target": "css=button:nth-child(1)",
+      "targets": [
+        ["css=button:nth-child(1)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[4]", "xpath:attributes"],
+        ["xpath=//div[2]/form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Logout')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e356e2b1-8201-49ad-99c8-699aabb3e1fc",
+      "comment": "",
+      "command": "click",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=username", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "98098906-d75a-4d4f-8c02-4774b07364c5",
+      "comment": "",
+      "command": "type",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=username", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "qwerty"
+    }, {
+      "id": "e093cf0d-30fc-4827-a900-b9ab0d0f59de",
+      "comment": "",
+      "command": "click",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "29fe96e4-03b6-4dd5-92fc-5032bb41236e",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "54321"
+    }, {
+      "id": "51680055-1458-4a87-9291-70975402a26f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Login')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d38e47d9-b7dd-450c-ad3e-1c82d7874d52",
+      "comment": "Вернемся в профиль чтобы убедиться, что это наш аккаунт",
+      "command": "click",
+      "target": "linkText=Profile",
+      "targets": [
+        ["linkText=Profile", "linkText"],
+        ["css=a:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'Profile')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/profile')]", "xpath:href"],
+        ["xpath=//a[2]", "xpath:position"],
+        ["xpath=//a[contains(.,'Profile')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ff69cf68-5816-4a81-a5b0-c368a9423a96",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=clientName",
+      "targets": [
+        ["id=clientName", "id"],
+        ["css=#clientName", "css:finder"],
+        ["xpath=//span[@id='clientName']", "xpath:attributes"],
+        ["xpath=//p/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Test Name')]", "xpath:innerText"]
+      ],
+      "value": "Test Name"
+    }, {
+      "id": "213e2bfe-0067-44cb-9d2a-f578c38fb5e9",
+      "comment": "Выходим из аккаунта",
+      "command": "click",
+      "target": "css=button:nth-child(1)",
+      "targets": [
+        ["css=button:nth-child(1)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[4]", "xpath:attributes"],
+        ["xpath=//div[2]/form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Logout')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "95bcb8fb-78f4-4b97-8299-22c60576f6fe",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["http://localhost:8080/", "http://localhost:8080/cart", "http://localhost:8080/login"],
+  "plugins": []
+}
